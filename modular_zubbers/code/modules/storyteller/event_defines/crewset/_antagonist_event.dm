@@ -51,8 +51,6 @@
 
 	var/list/ruleset_lazy_templates
 
-	max_occurrences = 0 //! VENUS EDIT: Disabled all antag events for now.
-
 /datum/round_event_control/antagonist/New()
 	. = ..()
 	if(CONFIG_GET(flag/protect_roles_from_antagonist))
