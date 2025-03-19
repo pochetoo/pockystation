@@ -41,7 +41,7 @@
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE)
 	//weight = 20 VENUS REMOVAL START (use 10 weight instead)
-	weight = 10
+	weight = 10 //VENUS EVENT EDIT: 20 -> 10
 
 /datum/round_event_control/anomaly/anomaly_vortex
 	track = EVENT_TRACK_MAJOR
