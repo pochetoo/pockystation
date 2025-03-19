@@ -40,7 +40,8 @@
 /datum/round_event_control/immovable_rod
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE)
-	weight = 20
+	//weight = 20 VENUS REMOVAL START (use 10 weight instead)
+	weight = 10
 
 /datum/round_event_control/anomaly/anomaly_vortex
 	track = EVENT_TRACK_MAJOR
