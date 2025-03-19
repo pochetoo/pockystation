@@ -11,6 +11,7 @@
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_DESTRUCTIVE, TAG_COMBAT, TAG_CHAOTIC)
 	weight = 10
+	max_occurrences = 0 //VENUS EVENT DISABLE
 
 /datum/round_event_control/meteor_wave
 	track = EVENT_TRACK_MAJOR
@@ -73,11 +74,13 @@
 /datum/round_event_control/pirates
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_COMMUNAL, TAG_COMBAT)
+	max_occurrences = 0 //VENUS EVENT DISABLE
 
 /datum/round_event_control/cortical_borer
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_TARGETED, TAG_SPOOKY)
 	min_players = 20
+	max_occurrences = 0 //VENUS EVENT DISABLE
 
 /datum/round_event_control/morph
 	track = EVENT_TRACK_MAJOR
