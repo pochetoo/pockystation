@@ -1,5 +1,6 @@
 /datum/storyteller/extended
-	name = "Extended (No Chaos)"
+	// name = "Extended (No Chaos)" VENUS REMOVAL EDIT: Name will be set at runtime based on config
+	name = "Extended"
 	//VENUS: Description will be set at runtime based on config
 	desc = "Extended is the absence of a Storyteller." // Default placeholder
 	//VENUS EDIT END
@@ -13,6 +14,10 @@
 //VENUS EDIT START: Description will be set at runtime based on config
 /datum/storyteller/extended/New()
 	. = ..()
+	if(CONFIG_GET(flag/allow_random_events))
+		name += " (Random Events)"
+	else
+		name += " (No Chaos)"
 	if(CONFIG_GET(flag/allow_random_events))
 		desc = "Extended is the absence of a Storyteller. It will not run any Antagonists, but will still allow random events to occur. Best for rounds where the population is so low that not even peaceful storytellers are low enough."
 	else
