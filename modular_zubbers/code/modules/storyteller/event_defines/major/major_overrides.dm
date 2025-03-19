@@ -80,7 +80,6 @@
 	track = EVENT_TRACK_MAJOR
 	tags = list(TAG_TARGETED, TAG_SPOOKY)
 	min_players = 20
-	max_occurrences = 0 //VENUS EVENT DISABLE
 
 /datum/round_event_control/morph
 	track = EVENT_TRACK_MAJOR
