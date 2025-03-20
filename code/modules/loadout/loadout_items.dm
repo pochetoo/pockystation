@@ -158,6 +158,7 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 
 	return TRUE
 
+//VENUS ADDITION START: Simple item color (changes color var directly)
 /// Opens a color picker for directly coloring the item.
 /datum/loadout_item/proc/set_item_simple_color(datum/preference_middleware/loadout/manager, mob/user)
 	var/list/loadout = manager.get_current_loadout()
@@ -176,6 +177,7 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 	loadout[item_path][INFO_COLOR] = new_color
 	manager.save_current_loadout(loadout)
 	return TRUE  // update UI
+//VENUS ADDITION END
 
 /// Opens up the GAGS editing menu.
 /datum/loadout_item/proc/set_item_color(datum/preference_middleware/loadout/manager, mob/user)
