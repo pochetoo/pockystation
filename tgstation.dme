@@ -9882,4 +9882,5 @@
 #include "modular_zzplurt\code\modules\vending\lustwish.dm"
 #include "modular_zzplurt\code\modules\vending\vending.dm"
 #include "modular_zzplurt\code\modules\wiremod\core\integrated_circuit.dm"
+#include "modular_zzvenus\code\modules\storyteller\storytellers\tellers\storyteller_7_randy.dm"
 // END_INCLUDE
