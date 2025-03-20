@@ -70,7 +70,6 @@
 /datum/round_event_control/gravity_generator_blackout
 	track = EVENT_TRACK_MUNDANE
 	tags = list(TAG_COMMUNAL, TAG_SPACE)
-	weight = 15 //VENUS EVENT EDIT: 30 -> 15
 
 /datum/round_event_control/shuttle_insurance
 	track = EVENT_TRACK_MUNDANE
