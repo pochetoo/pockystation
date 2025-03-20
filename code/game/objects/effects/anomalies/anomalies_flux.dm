@@ -7,8 +7,7 @@
 	var/shockdamage = 20
 	var/explosive = FLUX_EXPLOSIVE
 
-//VENUS EDIT - INITIALIZE: FLUX_EXPLOSIVE -> FLUX_LOW_EXPLOSIVE (makes standard flux less explosive)
-/obj/effect/anomaly/flux/Initialize(mapload, new_lifespan, drops_core = TRUE, explosive = FLUX_LOW_EXPLOSIVE)
+/obj/effect/anomaly/flux/Initialize(mapload, new_lifespan, explosive = FLUX_EXPLOSIVE)
 	. = ..()
 	src.explosive = explosive
 	var/static/list/loc_connections = list(
@@ -53,10 +52,10 @@
 
 /// A flux anomaly which doesn't explode or produce a core
 /obj/effect/anomaly/flux/minor
-	explosive = FLUX_NO_EXPLOSION
+	anomaly_core = null
 
 // We need to override the default arguments here to achieve the desired effect
-/obj/effect/anomaly/flux/minor/Initialize(mapload, new_lifespan, drops_core = FALSE, explosive = FLUX_NO_EXPLOSION)
+/obj/effect/anomaly/flux/minor/Initialize(mapload, new_lifespan, explosive = FLUX_NO_EXPLOSION)
 	return ..()
 
 ///Bigger, meaner, immortal flux anomaly
@@ -72,7 +71,7 @@
 	///the zappy flags
 	var/zap_flags = ZAP_GENERATES_POWER | ZAP_MOB_DAMAGE | ZAP_OBJ_DAMAGE
 
-/obj/effect/anomaly/flux/big/Initialize(mapload, new_lifespan, drops_core)
+/obj/effect/anomaly/flux/big/Initialize(mapload, new_lifespan)
 	. = ..()
 
 	transform *= 3
