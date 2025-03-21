@@ -49,3 +49,6 @@
   Goku:
   - rscadd: Dormitories have been shielded with a neutralizing field, bioscrambler
       anomalies will no longer track nor have any effect on people in dormitories.
+2025-03-21:
+  Goku:
+  - bugfix: Quick step quirk now correctly works when walking, not running.
