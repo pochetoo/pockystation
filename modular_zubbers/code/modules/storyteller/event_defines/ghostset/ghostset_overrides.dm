@@ -26,6 +26,7 @@
 	track = EVENT_TRACK_GHOSTSET
 	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_CHAOTIC)
 	weight = 2
+	max_occurrences = 0 //VENUS EVENT DISABLE
 
 /datum/round_event_control/spider_infestation
 	track = EVENT_TRACK_GHOSTSET
