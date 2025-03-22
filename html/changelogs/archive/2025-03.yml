@@ -858,10 +858,6 @@
   - bugfix: fixes loadout items duplication
   funnyfreeperson:
   - code_imp: made modular limbs no longer scream
-2025-03-19:
-  Goku:
-  - rscadd: Dormitories have been shielded with a neutralizing field, bioscrambler
-      anomalies will no longer track nor have any effect on people in dormitories.
 2025-03-18:
   Arturlang:
   - bugfix: Character setup panel is now slightly bigger
@@ -876,6 +872,9 @@
       psionic abilities
   Mitryll:
   - rscadd: Adds Beo plushie to the loadout (sprite by Cepha)
+  Goku:
+  - rscadd: Dormitories have been shielded with a neutralizing field, bioscrambler
+      anomalies will no longer track nor have any effect on people in dormitories.
 2025-03-21:
   Goku:
   - bugfix: Quick step quirk now correctly works when walking, not running.
