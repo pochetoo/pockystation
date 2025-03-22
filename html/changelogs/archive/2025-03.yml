@@ -813,7 +813,6 @@
   - bugfix: Fix illiterate people writing messages with crayons and spraycans.
   - bugfix: Fix hauntinum reagent to work when it is exposed to item objects.
   - code_imp: Optimize Nyctophobia quirk to not process while certain traits present
-2025-03-17:
   Anonymous:
   - rscadd: You can now buy trencher/Blastwave outfit from Clothesmate (minus gasmask).
   - rscadd: Cargo can import armored variant of trencher clothing as contraband.
