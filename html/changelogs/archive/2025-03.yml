@@ -157,6 +157,10 @@
   - bugfix: Can of fishing bait's quick refill can be used with the fishing rod's
       UI too
   - bugfix: You can no longer "use" can of bait on non-bait slots in fishing rod
+  Anonymous:
+  - rscadd: You can now buy trencher/Blastwave outfit from Clothesmate (minus gasmask).
+  - rscadd: Cargo can import armored variant of trencher clothing as contraband.
+  - bugfix: Removed duplicate trencher/Blastwave clothing.
   Archemagus:
   - code_imp: Shuttles with walls painted via color var shouldn't lose their walls
       in transit
@@ -174,6 +178,8 @@
   Ben10Omintrix:
   - qol: the raptor minigame now no longer opens up a new window
   - rscadd: the raptor minigame has been reworked
+  CydiaButt13:
+  - rscadd: Third eye marking
   DaCoolBoss:
   - balance: Trash items now contain small amounts of material.
   - map: '[Birdshot] Deleted some badly-placed resin tiles in eastern maints.'
@@ -261,6 +267,8 @@
   Holoo-1:
   - qol: cult spells no longer overlap with second row of inventory
   - bugfix: fixed circuit connections not being drawn outside initial screen on 516
+  IgiariValkyr:
+  - rscadd: Dullahans now have a Security Module.
   Jackraxxus:
   - bugfix: AI will no longer deathloop after being revived with 0 backup power.
   - admin: Added a new config to force admins to deadmin when readying up or latejoining
@@ -338,6 +346,9 @@
       drag it
   - bugfix: tgui say 516 will no longer leak radio messages into the wrong channel
   - bugfix: runechat flickering when faded up messages fade out
+  KazooBard:
+  - rscadd: Eldritch Essence (heretic's heal juice) now works on synths, the mansus
+      disregards it's worshippers equally.
   KingkumaArt:
   - image: Cooked bacon resprited to be more visually clear that it's cooked
   Kiromaka:
@@ -432,6 +443,20 @@
       a valid cutscene to play.
   - bugfix: The cleaning AI behavior (generally used by cleanbots) will no longer
       return early if the list of emagged phrases is empty.
+  MosleyTheMalO:
+  - image: resprites breasts
+  - image: resprites penises
+  - image: resprites balls
+  - bugfix: fixes the Character Directory entries
+  - bugfix: fixes inflation mechanics shrinking genitals.
+  - rscadd: adds bark blooper
+  - rscadd: quick step quirk
+  - rscadd: adds trashcan quirk
+  - rscadd: snail backpacks
+  - rscadd: alien honey as a reagent
+  - rscadd: adds puddle transformation ability to slimes
+  - bugfix: Fixes slugbobbers
+  - bugfix: fixes loadout items duplication
   MrMelbert, Time-Green:
   - rscadd: Adds an organ tree as a mutation of shrubs (from the exotic seeds crate)!
       Spare organs have never been so green!
@@ -621,11 +646,7 @@
   - balance: French fries are now immune to the effects of the floor. I miss floor
       fries
   TealSeer:
-  - qol: The RCD examine text now lists any upgrades it has installed.
-  - qol: The limb grower can now be unwrenched and rotated
-  - qol: air alarm wires are now labeled if you have the engineering skillchip
-  - qol: The medipen refiller can now be rotated when unanchored with alt-click
-  - rscadd: the janitor's belt can now hold a trash bag. just one
+  - bugfix: fixed character prefs bluescreening for certain species
   TheRyeGuyWhoWillNowDie:
   - balance: wildcard limits have been removed from Agent ID cards
   - balance: the specops crate gets a variation of the agent ID card which can only
@@ -705,6 +726,8 @@
   - rscdel: Removed the weighting of viro symptoms
   distributivgesetz:
   - config: Added support for multiple chat channel configs for channel announcements.
+  funnyfreeperson:
+  - code_imp: made modular limbs no longer scream
   grungussuss:
   - sound: sutures got some sounds
   - qol: ghost poll sound can now be disabled
@@ -732,6 +755,9 @@
   - bugfix: Fixed R&D console icons breaking on WebView2/516
   jlsnow301:
   - bugfix: Tgui menu component is fixed following tgui core v1.8.1
+  kiwedespars:
+  - qol: last resort is no longer innate, instead just a free ability like DNA sting
+      and defib grasp.
   larentoun:
   - bugfix: Changeling egg burst now correctly gives "monkey (123)" name for the changeling-monkey
       instead of getting a random human name.
@@ -779,6 +805,8 @@
   - code_imp: MOB_MINING and MOB_CRUSTACEAN are now defined biotypes.
   - code_imp: Audits some mining mob biotypes to make more sense based on what kind
       of creature they are and to include MOB_MINING in their defines.
+  nikothedude:
+  - rscadd: Venom milkers - siphon venom from people with the venom quirk
   norsvenska:
   - map: The NTSS Independence has, once again, been upgraded. Now featuring a proper
       ballroom, an expanded infirmary, a security office, and much more available
@@ -813,40 +841,6 @@
   - bugfix: Fix illiterate people writing messages with crayons and spraycans.
   - bugfix: Fix hauntinum reagent to work when it is exposed to item objects.
   - code_imp: Optimize Nyctophobia quirk to not process while certain traits present
-  Anonymous:
-  - rscadd: You can now buy trencher/Blastwave outfit from Clothesmate (minus gasmask).
-  - rscadd: Cargo can import armored variant of trencher clothing as contraband.
-  - bugfix: Removed duplicate trencher/Blastwave clothing.
-  CydiaButt13:
-  - rscadd: Third eye marking
-  IgiariValkyr:
-  - rscadd: Dullahans now have a Security Module.
-  KazooBard:
-  - rscadd: Eldritch Essence (heretic's heal juice) now works on synths, the mansus
-      disregards it's worshippers equally.
-  MosleyTheMalO:
-  - image: resprites breasts
-  - image: resprites penises
-  - image: resprites balls
-  - bugfix: fixes the Character Directory entries
-  - bugfix: fixes inflation mechanics shrinking genitals.
-  - rscadd: adds bark blooper
-  - rscadd: quick step quirk
-  - rscadd: adds trashcan quirk
-  - rscadd: snail backpacks
-  - rscadd: alien honey as a reagent
-  - rscadd: adds puddle transformation ability to slimes
-  - bugfix: Fixes slugbobbers
-  - bugfix: fixes loadout items duplication
-  TealSeer:
-  - bugfix: fixed character prefs bluescreening for certain species
-  funnyfreeperson:
-  - code_imp: made modular limbs no longer scream
-  kiwedespars:
-  - qol: last resort is no longer innate, instead just a free ability like DNA sting
-      and defib grasp.
-  nikothedude:
-  - rscadd: Venom milkers - siphon venom from people with the venom quirk
   xPokee:
   - balance: oversized characters can no longer use growth serum outside of dorms
   - balance: growth serum is now capped at the same size as you would be if you took
@@ -892,3 +886,11 @@
 2025-03-22:
   SmArtKar:
   - bugfix: Clothesplosion no longer drops straightjackets or facehuggers
+2025-03-23:
+  SmArtKar:
+  - bugfix: Fixed HEV suit actions
+  idrk13:
+  - rscadd: Armored harness
+  - rscadd: Armored harness crafting recipe
+  - rscadd: Armored harness loadout item
+  - rscadd: Armored harness for Multisec vendors
