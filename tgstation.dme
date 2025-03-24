@@ -9997,4 +9997,5 @@
 #include "modular_zzplurt\code\modules\vending\vending.dm"
 #include "modular_zzplurt\code\modules\wiremod\core\integrated_circuit.dm"
 #include "modular_zzvenus\code\game\objects\effects\decals\turfdecal\markings.dm"
+#include "modular_zzvenus\code\modules\storyteller\storytellers\tellers\storyteller_venusian.dm"
 // END_INCLUDE

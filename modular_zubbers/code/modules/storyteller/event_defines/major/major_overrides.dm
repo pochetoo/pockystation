@@ -44,11 +44,11 @@
 
 /datum/round_event_control/anomaly/anomaly_vortex
 	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_DESTRUCTIVE)
+	// tags = list(TAG_DESTRUCTIVE) //VENUS REMOVAL: Already defined in parent path
 
 /datum/round_event_control/anomaly/anomaly_pyro
 	track = EVENT_TRACK_MAJOR
-	tags = list(TAG_DESTRUCTIVE)
+	// tags = list(TAG_DESTRUCTIVE) //VENUS REMOVAL: Already defined in parent path
 
 /datum/round_event_control/revenant
 	min_players = 20
