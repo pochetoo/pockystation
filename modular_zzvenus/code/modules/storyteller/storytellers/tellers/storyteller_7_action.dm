@@ -1,5 +1,5 @@
 /datum/storyteller/action
-	name = "Action Andy (Frequent Chaos)"
+	name = "Action Andy (Medium-High Chaos)"
 	desc = "Action Andy tries to recreate the classic random event system, generating events 25-37% more frequently than Default Andy (but only for standard events, not antagonists). \
 	He maintains the same unbiased event selection as Default Andy, just running them more frequently. \
 	Perfect for players who miss the old days but still want a balanced experience."
