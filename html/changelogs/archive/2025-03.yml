@@ -894,3 +894,9 @@
   - rscadd: Armored harness crafting recipe
   - rscadd: Armored harness loadout item
   - rscadd: Armored harness for Multisec vendors
+2025-03-25:
+  Goku:
+  - balance: Modified radiation storm protection to include maintenance areas and
+      dorms, providing safer areas during radioactive nebula events.
+  - balance: Un-nerfed the normal radiation storm event, so only maintenance and dorms
+      are protected from radiation.
