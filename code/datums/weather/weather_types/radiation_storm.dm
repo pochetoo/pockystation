@@ -87,7 +87,10 @@
 
 /// Used by the radioactive nebula when the station doesnt have enough shielding
 /datum/weather/rad_storm/nebula
-	protected_areas = list(/area/shuttle, /area/station/maintenance/radshelter)
+	//VENUS EDIT START: (Protect dorms and maintenance from radiation) | ORIGINAL:
+	//protected_areas = list(/area/shuttle, /area/station/maintenance/radshelter)
+	protected_areas = list(/area/shuttle, /area/station/maintenance, /area/station/commons/dorms, /area/station/commons/locker)
+	//VENUS EDIT END
 
 	weather_overlay = "nebula_radstorm"
 	weather_duration_lower = 100 HOURS
@@ -120,8 +123,3 @@
 	if(!active) //we stay on
 		return
 	..()
-
-//VENUS ADDITION START: Radstorm that only affects hallways
-/datum/weather/rad_storm/hallway
-	area_type = /area/station/hallway
-//VENUS ADDITION END
