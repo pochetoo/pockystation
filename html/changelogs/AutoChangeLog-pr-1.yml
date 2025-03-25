@@ -1,0 +1,5 @@
+author: "Goku"
+delete-after: True
+changes:
+  - balance: "Modified radiation storm protection to include maintenance areas and dorms, providing safer areas during radioactive nebula events."
+  - balance: "Un-nerfed the normal radiation storm event, so only maintenance and dorms are protected from radiation."
