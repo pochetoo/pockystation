@@ -58,5 +58,4 @@
 
 /datum/round_event_control/operative
 	track = EVENT_TRACK_MODERATE
-	tags = list(TAG_COMBAT, TAG_CHAOTIC, TAG_CREW_ANTAG)
 	max_occurrences = 0 //VENUS EVENT DISABLE
