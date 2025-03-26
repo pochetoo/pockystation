@@ -882,15 +882,9 @@
   - qol: Adds the ability to put a reference picture on the examine panel.
   sakke03:
   - rscadd: Added malaysia and pain emotes from oldbase
-<<<<<<< HEAD
 2025-03-21:
   Goku:
   - bugfix: Quick step quirk now correctly works when walking, not running.
-=======
-  - rscadd: Events no longer run if the shuttle is moving towards the station in a
-      no-recall state.
-  - rscadd: Fixes several moonstation bugs/issues/whatever.
->>>>>>> upstream/master
 2025-03-22:
   Arturlang:
   - bugfix: Hologram mobs no longer have blood
@@ -920,11 +914,8 @@
   SmArtKar:
   - bugfix: Clothesplosion no longer drops straightjackets or facehuggers
 2025-03-23:
-<<<<<<< HEAD
-=======
   LT3:
   - rscadd: Miniskirt now available in the clothesmate
->>>>>>> upstream/master
   SmArtKar:
   - bugfix: Fixed HEV suit actions
   idrk13:
@@ -932,14 +923,12 @@
   - rscadd: Armored harness crafting recipe
   - rscadd: Armored harness loadout item
   - rscadd: Armored harness for Multisec vendors
-<<<<<<< HEAD
 2025-03-25:
   Goku:
   - balance: Modified radiation storm protection to include maintenance areas and
       dorms, providing safer areas during radioactive nebula events.
   - balance: Un-nerfed the normal radiation storm event, so only maintenance and dorms
       are protected from radiation.
-=======
 2025-03-24:
   LT3:
   - bugfix: Fixed fitting of black and colorable flannel shirts
@@ -973,4 +962,8 @@
 2025-03-25:
   funnyfreeperson:
   - bugfix: makes modular limbs spell work
->>>>>>> upstream/master
+  Goku:
+  - balance: Modified radiation storm protection to include maintenance areas and
+      dorms, providing safer areas during radioactive nebula events.
+  - balance: Un-nerfed the normal radiation storm event, so only maintenance and dorms
+      are protected from radiation.
