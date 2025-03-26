@@ -923,12 +923,6 @@
   - rscadd: Armored harness crafting recipe
   - rscadd: Armored harness loadout item
   - rscadd: Armored harness for Multisec vendors
-2025-03-25:
-  Goku:
-  - balance: Modified radiation storm protection to include maintenance areas and
-      dorms, providing safer areas during radioactive nebula events.
-  - balance: Un-nerfed the normal radiation storm event, so only maintenance and dorms
-      are protected from radiation.
 2025-03-24:
   LT3:
   - bugfix: Fixed fitting of black and colorable flannel shirts
@@ -960,10 +954,19 @@
   - map: toned down some of the roundstart persistence equipment that can be acquired
       through other relatively easy means such as cargo.
 2025-03-25:
-  funnyfreeperson:
-  - bugfix: makes modular limbs spell work
   Goku:
   - balance: Modified radiation storm protection to include maintenance areas and
       dorms, providing safer areas during radioactive nebula events.
   - balance: Un-nerfed the normal radiation storm event, so only maintenance and dorms
       are protected from radiation.
+  funnyfreeperson:
+  - bugfix: makes modular limbs spell work
+2025-03-26:
+  Swiftfeather:
+  - rscadd: Added a round removal opt-in preference.
+  TealSeer:
+  - bugfix: fixed synth chassis taking their color from the head
+  ariaworld:
+  - bugfix: Hemophages and Bloodfledges will no longer suffer from normal thirst.
+  xPokee:
+  - rscadd: akula tongues now have the fish chat bubble effect tied to them

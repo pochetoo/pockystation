@@ -1,4 +1,0 @@
-author: "ariaworld"
-delete-after: True
-changes:
-  - bugfix: "Hemophages and Bloodfledges will no longer suffer from normal thirst."
