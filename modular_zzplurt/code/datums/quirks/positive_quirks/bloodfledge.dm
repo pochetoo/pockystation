@@ -48,7 +48,7 @@
 
 	// Add quirk traits
 	ADD_TRAIT(quirk_mob, TRAIT_LIVERLESS_METABOLISM, TRAIT_BLOODFLEDGE)
-	//ADD_TRAIT(quirk_mob, TRAIT_NOTHIRST, TRAIT_BLOODFLEDGE) // Not yet implemented
+	ADD_TRAIT(quirk_mob, TRAIT_NOTHIRST, TRAIT_BLOODFLEDGE) // Not yet implemented //VENUS EDIT: Enabled
 
 	// Register blood consumption interaction
 	RegisterSignal(quirk_holder, COMSIG_REAGENT_ADD_BLOOD, PROC_REF(on_consume_blood))
