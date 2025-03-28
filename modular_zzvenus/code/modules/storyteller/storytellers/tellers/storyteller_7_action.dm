@@ -10,5 +10,5 @@
 
 /datum/storyteller_data/tracks/action
 	threshold_mundane = 900    // 75% of Default Andy's 1200 (25% faster)
-	threshold_moderate = 1200   // 67% of Default Andy's 1800 (33% faster)
+	threshold_moderate = 1350   // 75% of Default Andy's 1800 (25% faster)
 	threshold_major = 5000     // 62.5% of Default Andy's 8000 (37.5% faster)
