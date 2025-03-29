@@ -955,8 +955,8 @@
       through other relatively easy means such as cargo.
 2025-03-25:
   Goku:
-  - balance: Radioactive Nebula radiation storm will now not hit maintenance and dorms/lockers.
-  - balance: Normal radiation storm will now not hit dorms/lockers.
+  - balance: Radioactive Nebula radiation storm will now not hit maintenance and dorms/lockers rooms.
+  - balance: Normal radiation storm will now not hit dorms/lockers rooms.
   funnyfreeperson:
   - bugfix: makes modular limbs spell work
 2025-03-26:
