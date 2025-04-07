@@ -301,6 +301,9 @@
 	contains = list(/obj/item/reagent_containers/cup/glass/bottle/juice/dreadnog = 3)
 	crate_name = "dreadnog crate"
 
+// VENUS EDIT: RE-ENABLED Start
+// BUBBER EDIT - Removal Start
+
 /datum/supply_pack/imports/giant_wrench_parts
 	name = "Big Slappy parts"
 	desc = "Illegal Big Slappy parts. The fastest and statistically most dangerous wrench."
@@ -309,7 +312,7 @@
 	contains = list(/obj/item/weaponcrafting/giant_wrench)
 	crate_name = "unknown parts crate"
 
-/datum/supply_pack/imports/materials_market
+/datum/supply_pack/imports/materials_market //RE ENABLE IF FIXED UPSTREAM
 	name = "Galactic Materials Market Crate"
 	desc = "A circuit board to build your own materials market for use by certified market traders. Warning: Losses are not covered by insurance."
 	cost = CARGO_CRATE_VALUE * 3
@@ -322,6 +325,9 @@
 	)
 	crate_name = "materials market crate"
 	crate_type = /obj/structure/closet/crate/cargo
+
+// BUBBER EDIT - Removal End
+// VENUS EDIT: RE-ENABLED End
 
 /datum/supply_pack/imports/floortilecamo
 	name = "Floor-tile Camouflage Uniform"
