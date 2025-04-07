@@ -66,6 +66,10 @@
 		/area/station/solars,
 		/area/station/holodeck,
 		/area/station/maintenance,
+		//VENUS ADDITION START: (Protect dorms and lockers rooms from anomaly spawns)
+		/area/station/commons/dorms,
+		/area/station/commons/locker,
+		//VENUS ADDITION END
 	))
 
 	//Subtypes from the above that actually should explode.
