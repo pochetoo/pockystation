@@ -26,6 +26,7 @@
 	track = EVENT_TRACK_GHOSTSET
 	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_CHAOTIC)
 	weight = 2
+	min_players = 20 //VENUS EVENT ADDITION
 
 /datum/round_event_control/spider_infestation
 	track = EVENT_TRACK_GHOSTSET
