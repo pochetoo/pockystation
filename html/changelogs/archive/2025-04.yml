@@ -101,3 +101,5 @@
 2025-04-11:
   Goku:
   - bugfix: Fixed HEV suit calibration and deactivation.
+  - balance: Lifted minimum active players for Alien Infestation to 20 (like giant spiders and other ghostspawns)
+  - balance: Removed weed planting ability from Ravagers and Warriors xenomorphs. (They now have a thin plasma vessel)
