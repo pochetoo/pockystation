@@ -350,6 +350,21 @@
 	if(!user.mind)
 		return
 	playsound(user, 'sound/machines/terminal/terminal_prompt.ogg', 100, TRUE)
+
+	//VENUS ADDITION START - Check for hotel items in the user's possession
+	var/list/hotel_items = list()
+	for(var/obj/item/I in user.get_all_contents())
+		var/datum/component/hotel_item/hotel_comp = I.GetComponent(/datum/component/hotel_item)
+		if(hotel_comp)
+			hotel_items += I
+
+	if(length(hotel_items))
+		to_chat(user, span_warning("As you approach the doorway, [english_list(hotel_items)] [length(hotel_items) == 1 ? "begins" : "begin"] to vibrate violently! The immense pressure around the doorway is repelling [length(hotel_items) == 1 ? "it" : "them"]. You feel like you'll need to leave [length(hotel_items) == 1 ? "it" : "them"] behind."))
+		playsound(user, 'sound/items/weapons/resonator_blast.ogg', 25, TRUE)
+		shake_camera(user, 2, 1)
+		return
+	//VENUS ADDITION END
+
 	if(tgui_alert(user, "Hilbert's Hotel would like to remind you that while we will do everything we can to protect the belongings you leave behind, we make no guarantees of their safety while you're gone, especially that of the health of any living creatures. With that in mind, are you ready to leave?", "You sure?", list("Leave", "Stay")) == "Stay")
 		return
 	if(!(user.mind in entry_points)) // no valid entry point for this mind - reverting to the parent sphere

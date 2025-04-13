@@ -13,3 +13,4 @@
   - balance: Reduced mood bonus from Hilbert's Hotel/Interlink Dorm Rooms/Centcom Holding from 25 to 10.
   - bugfix: Fixed Hilbert's Hotel vending machines being free.
   - balance: Hilbert's Hotel nightclub money has no value.
+  - rscadd: Hilbert's Hotel items now have a component that blocks them from being taken out of the hotel.

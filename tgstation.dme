@@ -10097,6 +10097,7 @@
 #include "modular_zzplurt\code\modules\vending\multisec.dm"
 #include "modular_zzplurt\code\modules\vending\vending.dm"
 #include "modular_zzplurt\code\modules\wiremod\core\integrated_circuit.dm"
+#include "modular_zzvenus\code\datums\components\hotel_item.dm"
 #include "modular_zzvenus\code\game\objects\effects\decals\turfdecal\markings.dm"
 #include "modular_zzvenus\code\modules\asset_cache\asset_list.dm"
 #include "modular_zzvenus\code\modules\asset_cache\assets\tgui.dm"

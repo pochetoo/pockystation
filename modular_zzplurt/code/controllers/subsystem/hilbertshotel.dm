@@ -263,6 +263,13 @@ SUBSYSTEM_DEF(hilbertshotel)
 		this_vending.onstation_override = ROOM_ONSTATION_OVERRIDE
 		this_vending.all_products_free = !ROOM_ONSTATION_OVERRIDE
 
+	//VENUS ADDITION START - Add hotel_item component to all items in the room
+	var/list/all_items = current_area.get_all_contents_type(/obj/item)
+	for(var/obj/item/I in all_items)
+		if(!I.GetComponent(/datum/component/hotel_item))
+			I.AddComponent(/datum/component/hotel_item, room_number)
+	//VENUS ADDITION END
+
 	LAZYSET(room_data, "[room_number]", list(
 		"reservation" = roomReservation,
 		"door_reference" = null,
