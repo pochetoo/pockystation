@@ -261,6 +261,7 @@ SUBSYSTEM_DEF(hilbertshotel)
 	for(var/obj/machinery/vending/this_vending in current_area)
 		this_vending.onstation = ROOM_ONSTATION_OVERRIDE
 		this_vending.onstation_override = ROOM_ONSTATION_OVERRIDE
+		this_vending.all_products_free = !ROOM_ONSTATION_OVERRIDE
 
 	LAZYSET(room_data, "[room_number]", list(
 		"reservation" = roomReservation,
