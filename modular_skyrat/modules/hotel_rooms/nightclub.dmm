@@ -247,7 +247,8 @@
 /obj/structure/table/reinforced/plasmarglass,
 /obj/item/stack/spacecash/c5000{
 	pixel_y = 15;
-	pixel_x = 4
+	pixel_x = 4;
+	value = 0 //VENUS ADDITION
 	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
@@ -288,7 +289,8 @@
 /obj/structure/table/reinforced/plasmarglass,
 /obj/item/stack/spacecash/c200{
 	pixel_y = -11;
-	pixel_x = 7
+	pixel_x = 7;
+	value = 0 //VENUS ADDITION
 	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
@@ -369,7 +371,8 @@
 "Mj" = (
 /obj/structure/table/reinforced/plasmarglass,
 /obj/item/stack/spacecash/c1000{
-	pixel_x = -10
+	pixel_x = -10;
+	value = 0 //VENUS ADDITION
 	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
@@ -447,7 +450,8 @@
 /obj/structure/table/reinforced/plasmarglass,
 /obj/item/stack/spacecash/c500{
 	pixel_y = 2;
-	pixel_x = -6
+	pixel_x = -6;
+	value = 0 //VENUS ADDITION
 	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
@@ -492,7 +496,9 @@
 /area/misc/hilbertshotel)
 "Zf" = (
 /obj/structure/table/reinforced/plasmarglass,
-/obj/item/stack/spacecash/c500,
+/obj/item/stack/spacecash/c500{
+	value = 0 //VENUS ADDITION
+	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
 "Zz" = (
