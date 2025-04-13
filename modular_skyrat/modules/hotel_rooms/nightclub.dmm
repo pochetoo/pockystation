@@ -496,7 +496,7 @@
 /area/misc/hilbertshotel)
 "Zf" = (
 /obj/structure/table/reinforced/plasmarglass,
-/obj/item/stack/spacecash/c500{
+/obj/item/stack/spacecash/c100{ //VENUS EDIT: ORIGINAL: c500 cash
 	value = 0 //VENUS ADDITION
 	},
 /turf/open/floor/light,
