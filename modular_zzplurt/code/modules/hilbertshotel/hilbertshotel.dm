@@ -83,6 +83,35 @@
 	if(room_number > SHORT_REAL_LIMIT)
 		to_chat(target, span_warning("You have to check out the first [SHORT_REAL_LIMIT] rooms before you can go to a higher numbered one!"))
 		return
+	//VENUS ADDITION START - Limit per-player room count
+	// Check per-player room limit
+	if(target.mind)
+		var/rooms_owned = 0
+
+		// Check if room already exists (joining existing room doesn't count toward limit)
+		var/room_exists = FALSE
+		if(SShilbertshotel.room_data["[room_number]"])
+			room_exists = TRUE
+		else if(SShilbertshotel.conservated_rooms["[room_number]"])
+			room_exists = TRUE
+
+		if(!room_exists)
+			// Count active rooms owned by this player
+			for(var/room_id in SShilbertshotel.room_data)
+				var/list/room = SShilbertshotel.room_data[room_id]
+				if(room["access_restrictions"]["room_owner"] == target.mind)
+					rooms_owned++
+
+			// Count conservated rooms owned by this player
+			for(var/room_id in SShilbertshotel.conservated_rooms)
+				var/list/room = SShilbertshotel.conservated_rooms[room_id]
+				if(room["access_restrictions"]["room_owner"] == target.mind)
+					rooms_owned++
+
+			if(rooms_owned >= 5) // Limit to 5 rooms per player
+				to_chat(target, span_warning("Hilbert's Hotel only allows you to own up to 5 rooms at a time!"))
+				return
+			//VENUS ADDITION END
 
 	if(!template || !(template in SShilbertshotel.hotel_map_list))
 		template = SShilbertshotel.default_template
