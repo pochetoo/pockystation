@@ -9,7 +9,6 @@
 		/area/ruin/unpowered/primitive_catgirl_den,
 		//VENUS ADDITION START: (Protect dorms from radiation)
 		/area/station/commons/dorms,
-		/area/station/commons/locker,
 		//VENUS ADDITION END
 	))
 	. = ..()

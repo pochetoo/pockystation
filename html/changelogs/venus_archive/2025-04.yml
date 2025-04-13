@@ -14,3 +14,6 @@
   - bugfix: Fixed Hilbert's Hotel vending machines being free.
   - balance: Hilbert's Hotel nightclub money has no value.
   - rscadd: Hilbert's Hotel items now have a component that blocks them from being taken out of the hotel.
+2025-04-14:
+  Goku:
+  - balance: Locker rooms are no longer protected from anomaly spawns/radiation storms.
