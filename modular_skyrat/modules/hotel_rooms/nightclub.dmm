@@ -245,10 +245,10 @@
 /area/misc/hilbertshotel)
 "Ep" = (
 /obj/structure/table/reinforced/plasmarglass,
-/obj/item/stack/spacecash/c5000{
+/obj/item/stack/spacecash/c5000{ //VENUS EDIT: Added value = 0
 	pixel_y = 15;
 	pixel_x = 4;
-	value = 0 //VENUS ADDITION
+	value = 0
 	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
@@ -287,10 +287,10 @@
 /area/misc/hilbertshotel)
 "Gv" = (
 /obj/structure/table/reinforced/plasmarglass,
-/obj/item/stack/spacecash/c200{
+/obj/item/stack/spacecash/c200{ //VENUS EDIT: Added value = 0
 	pixel_y = -11;
 	pixel_x = 7;
-	value = 0 //VENUS ADDITION
+	value = 0
 	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
@@ -370,9 +370,9 @@
 /area/misc/hilbertshotel)
 "Mj" = (
 /obj/structure/table/reinforced/plasmarglass,
-/obj/item/stack/spacecash/c1000{
+/obj/item/stack/spacecash/c1000{ //VENUS EDIT: Added value = 0
 	pixel_x = -10;
-	value = 0 //VENUS ADDITION
+	value = 0
 	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
@@ -448,10 +448,10 @@
 /area/misc/hilbertshotel)
 "Sp" = (
 /obj/structure/table/reinforced/plasmarglass,
-/obj/item/stack/spacecash/c500{
+/obj/item/stack/spacecash/c500{ //VENUS EDIT: Added value = 0
 	pixel_y = 2;
 	pixel_x = -6;
-	value = 0 //VENUS ADDITION
+	value = 0
 	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
@@ -496,8 +496,8 @@
 /area/misc/hilbertshotel)
 "Zf" = (
 /obj/structure/table/reinforced/plasmarglass,
-/obj/item/stack/spacecash/c100{ //VENUS EDIT: ORIGINAL: c500 cash
-	value = 0 //VENUS ADDITION
+/obj/item/stack/spacecash/c100{ //VENUS EDIT: ORIGINAL: c500 cash + added value = 0
+	value = 0
 	},
 /turf/open/floor/light,
 /area/misc/hilbertshotel)
