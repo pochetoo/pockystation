@@ -641,8 +641,7 @@
 	send_hev_sound(radiation_sound)
 
 /obj/item/clothing/suit/space/hev_suit/proc/weaponselect()
-	ADD_TRAIT(current_user, TRAIT_GUNFLIP, "hev_trait")
-	ADD_TRAIT(current_user, TRAIT_GUN_NATURAL, "hev_trait")
+	current_user.add_traits(list(TRAIT_GUNFLIP,TRAIT_GUN_NATURAL), "hev_trait")
 	playsound(src, weaponselect_sound, 50)
 	send_message("...CALIBRATED", HEV_COLOR_GREEN)
 	send_message("CALIBRATING MUNITION LEVEL MONITORING SYSTEMS...")
@@ -682,8 +681,7 @@
 		REMOVE_TRAIT(current_internals_tank, TRAIT_NODROP, "hev_trait")
 	if(current_user)
 		send_message("SYSTEMS DEACTIVATED", HEV_COLOR_RED)
-		REMOVE_TRAIT(current_user, TRAIT_GUNFLIP, "hev_trait")
-		REMOVE_TRAIT(current_user, TRAIT_GUN_NATURAL, "hev_trait")
+		current_user.remove_traits(list(TRAIT_GUNFLIP,TRAIT_GUN_NATURAL), "hev_trait")
 		UnregisterSignal(current_user, list(
 			COMSIG_ATOM_ACID_ACT,
 			COMSIG_CARBON_GAIN_WOUND,
