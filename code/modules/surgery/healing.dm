@@ -2,8 +2,9 @@
 	target_mobtypes = list(/mob/living)
 	requires_bodypart_type = BODYTYPE_ORGANIC //SKYRAT EDIT CHANGE - ORIGINAL VALUE: requires_bodypart_type = FALSE
 	replaced_by = /datum/surgery
-	surgery_flags = SURGERY_IGNORE_CLOTHES | SURGERY_REQUIRE_RESTING
+	surgery_flags = SURGERY_IGNORE_CLOTHES | SURGERY_REQUIRE_RESTING | SURGERY_SELF_OPERABLE //VENUS EDIT: Added SURGERY_SELF_OPERABLE
 	possible_locs = list(BODY_ZONE_CHEST)
+	self_surgery_possible_locs = list(BODY_ZONE_CHEST) //VENUS ADDITION - Self Surgery
 	steps = list(
 		/datum/surgery_step/incise,
 		/datum/surgery_step/retract_skin,

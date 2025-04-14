@@ -88,6 +88,7 @@
 #define SURGERY_SPEED_TRAIT_ANALGESIA 0.92 // BUBBER EDIT CHANGE - Original: 0.80
 ///Modifier given to patients with sterilization spray
 #define SURGERY_SPEED_TRAIT_STERILE 0.84 // BUBBER EDIT ADDITION
+#define SURGERY_SPEED_SELF_SURGERY_MODIFIER 2.0 // VENUS ADDITION - Negative modifier for self-surgery
 
 /datum/surgery_step/proc/initiate(mob/living/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	// Only followers of Asclepius have the ability to use Healing Touch and perform miracle feats of surgery.
@@ -130,6 +131,11 @@
 		if(target.has_sterilizine())
 			speed_mod *= SURGERY_SPEED_TRAIT_STERILE
 	// BUBBER EDIT CHANGE END
+
+	// VENUS ADDITION BEGIN - Self-surgery penalty
+	if(user == target && !(surgery.requires_bodypart_type & BODYTYPE_ROBOTIC))
+		speed_mod *= SURGERY_SPEED_SELF_SURGERY_MODIFIER
+	// VENUS ADDITION END
 
 	var/implement_speed_mod = 1
 	if(implement_type) //this means it isn't a require hand or any item step.
@@ -352,3 +358,4 @@
 #undef SURGERY_STATE_SUCCESS
 #undef SURGERY_MOOD_CATEGORY
 #undef SURGERY_SPEED_TRAIT_STERILE // BUBBER EDIT ADDITION
+#undef SURGERY_SPEED_SELF_SURGERY_MODIFIER // VENUS ADDITION - Negative modifier for self-surgery

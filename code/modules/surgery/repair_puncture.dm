@@ -8,7 +8,7 @@
 ///// Repair puncture wounds
 /datum/surgery/repair_puncture
 	name = "Repair puncture"
-	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
+	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB | SURGERY_SELF_OPERABLE //VENUS EDIT: Added SURGERY_SELF_OPERABLE
 	targetable_wound = /datum/wound/pierce/bleed
 	target_mobtypes = list(/mob/living/carbon)
 	possible_locs = list(
@@ -19,6 +19,15 @@
 		BODY_ZONE_CHEST,
 		BODY_ZONE_HEAD,
 	)
+	//VENUS ADDITION START - Self Surgery
+	self_surgery_possible_locs = list(
+		BODY_ZONE_R_ARM,
+		BODY_ZONE_L_ARM,
+		BODY_ZONE_R_LEG,
+		BODY_ZONE_L_LEG,
+		BODY_ZONE_CHEST,
+	)
+	//VENUS ADDITION END
 	steps = list(
 		/datum/surgery_step/incise,
 		/datum/surgery_step/repair_innards,

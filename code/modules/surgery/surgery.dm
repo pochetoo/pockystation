@@ -17,6 +17,10 @@
 	var/location = BODY_ZONE_CHEST
 	///The possible bodyparts that the surgery can be started on.
 	var/list/possible_locs = list()
+	///VENUS ADDITION START - Self Surgery
+	///The body zones that can be targeted when performing self-surgery. If null, uses possible_locs. If empty list, no self-surgery possible.
+	var/list/self_surgery_possible_locs = null  // VENUS ADDITION - For self-surgery location restrictions
+	///VENUS ADDITION END
 	///Mobs that are valid to have surgery performed on them.
 	var/list/target_mobtypes = list(/mob/living/carbon/human)
 

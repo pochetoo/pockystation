@@ -17,3 +17,7 @@
 2025-04-14:
   Goku:
   - balance: Locker rooms are no longer protected from anomaly spawns/radiation storms.
+2025-04-15:
+  Goku:
+  - rscadd: Added self-surgery capabilities for several organic surgery types, including soft organ manipulation, tend wounds, and various wounds repair surgeries.
+  - balance: Organic self-surgery has a 2.0x negative modifier and can only be performed on accessible body parts.

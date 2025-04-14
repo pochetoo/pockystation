@@ -14,6 +14,15 @@
 		BODY_ZONE_CHEST,
 		BODY_ZONE_HEAD,
 	)
+	//VENUS ADDITION START - Self Surgery
+	self_surgery_possible_locs = list(
+		BODY_ZONE_R_ARM,
+		BODY_ZONE_L_ARM,
+		BODY_ZONE_R_LEG,
+		BODY_ZONE_L_LEG,
+		BODY_ZONE_CHEST,
+	)
+	//VENUS ADDITION END
 	steps = list(
 		/datum/surgery_step/incise,
 		/datum/surgery_step/repair_bone_hairline,
@@ -33,6 +42,15 @@
 		BODY_ZONE_CHEST,
 		BODY_ZONE_HEAD,
 	)
+	//VENUS ADDITION START - Self Surgery
+	self_surgery_possible_locs = list(
+		BODY_ZONE_R_ARM,
+		BODY_ZONE_L_ARM,
+		BODY_ZONE_R_LEG,
+		BODY_ZONE_L_LEG,
+		BODY_ZONE_CHEST,
+	)
+	//VENUS ADDITION END
 	steps = list(
 		/datum/surgery_step/incise,
 		/datum/surgery_step/retract_skin,

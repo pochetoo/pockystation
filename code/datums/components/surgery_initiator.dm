@@ -90,6 +90,11 @@
 			continue
 		if(user == target && !(surgery.surgery_flags & SURGERY_SELF_OPERABLE))
 			continue
+		//VENUS ADDITION START - Self Surgery
+		if(user == target && (surgery.surgery_flags & SURGERY_SELF_OPERABLE))
+			if(!isnull(surgery.self_surgery_possible_locs) && !surgery.self_surgery_possible_locs.Find(user.zone_selected))
+				continue
+		//VENUS ADDITION END
 
 		if(isnull(affecting))
 			if(surgery.surgery_flags & SURGERY_REQUIRE_LIMB)

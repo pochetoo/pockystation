@@ -55,6 +55,8 @@
 
 /datum/surgery/organ_manipulation/soft
 	possible_locs = list(BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)
+	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB | SURGERY_MORBID_CURIOSITY | SURGERY_SELF_OPERABLE //VENUS EDIT: Added SURGERY_SELF_OPERABLE
+	self_surgery_possible_locs = list(BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM) //VENUS ADDITION - Self Surgery
 	steps = list(
 		/datum/surgery_step/incise,
 		/datum/surgery_step/retract_skin,
