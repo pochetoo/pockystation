@@ -23,7 +23,6 @@ LINEN BINS
 	resistance_flags = FLAMMABLE
 	dying_key = DYE_REGISTRY_BEDSHEET
 	interaction_flags_click = NEED_DEXTERITY|ALLOW_RESTING
-	interaction_flags_atom = parent_type::interaction_flags_atom | INTERACT_ATOM_IGNORE_MOBILITY //VENUS ADDITION - Fixes self surgery not being available with bedsheets while laying down
 
 
 	dog_fashion = /datum/dog_fashion/head/ghost
