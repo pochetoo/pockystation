@@ -4,7 +4,7 @@
 ///// Repair Hairline Fracture (Severe)
 /datum/surgery/repair_bone_hairline
 	name = "Repair bone fracture (hairline)"
-	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
+	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB | SURGERY_SELF_OPERABLE //VENUS EDIT: Added SURGERY_SELF_OPERABLE
 	targetable_wound = /datum/wound/blunt/bone/severe
 	possible_locs = list(
 		BODY_ZONE_R_ARM,
@@ -42,15 +42,6 @@
 		BODY_ZONE_CHEST,
 		BODY_ZONE_HEAD,
 	)
-	//VENUS ADDITION START - Self Surgery
-	self_surgery_possible_locs = list(
-		BODY_ZONE_R_ARM,
-		BODY_ZONE_L_ARM,
-		BODY_ZONE_R_LEG,
-		BODY_ZONE_L_LEG,
-		BODY_ZONE_CHEST,
-	)
-	//VENUS ADDITION END
 	steps = list(
 		/datum/surgery_step/incise,
 		/datum/surgery_step/retract_skin,
