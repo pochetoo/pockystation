@@ -80,6 +80,7 @@
 	return FALSE
 
 #define SURGERY_SLOWDOWN_CAP_MULTIPLIER 2.5 //increase to make surgery slower but fail less, and decrease to make surgery faster but fail more
+#define SURGERY_SELF_SURGERY_SLOWDOWN_CAP_MULTIPLIER 3.5 // VENUS ADDITION - Higher cap for self-surgery
 ///Modifier given to surgery speed for dissected bodies.
 #define SURGERY_SPEED_DISSECTION_MODIFIER 0.8
 ///Modifier given to users with TRAIT_MORBID on certain surgeries
@@ -144,9 +145,17 @@
 	speed_mod /= (get_location_modifier(target) * (1 + surgery.speed_modifier) * implement_speed_mod) * target.mob_surgery_speed_mod
 	var/modded_time = time * speed_mod
 
-
+	//VENUS EDIT BEGIN - Replaced with cap_multiplier depending on if the surgery is self-surgery
+	/*
 	fail_prob = min(max(0, modded_time - (time * SURGERY_SLOWDOWN_CAP_MULTIPLIER)),99)//if modded_time > time * modifier, then fail_prob = modded_time - time*modifier. starts at 0, caps at 99
-	modded_time = min(modded_time, time * SURGERY_SLOWDOWN_CAP_MULTIPLIER)//also if that, then cap modded_time at time*modifier
+    modded_time = min(modded_time, time * SURGERY_SLOWDOWN_CAP_MULTIPLIER)//also if that, then cap modded_time at time*modifier
+	*/
+	//VENUS EDIT END
+	//VENUS ADDITION BEGIN - Self-surgery cap multiplier
+	var/cap_multiplier = (user == target && !(surgery.requires_bodypart_type & BODYTYPE_ROBOTIC)) ? SURGERY_SELF_SURGERY_SLOWDOWN_CAP_MULTIPLIER : SURGERY_SLOWDOWN_CAP_MULTIPLIER
+	fail_prob = min(max(0, modded_time - (time * cap_multiplier)),99)//if modded_time > time * modifier, then fail_prob = modded_time - time*modifier. starts at 0, caps at 99
+	modded_time = min(modded_time, time * cap_multiplier)//also if that, then cap modded_time at time*modifier
+	//VENUS ADDITION END
 
 	if(iscyborg(user))//any immunities to surgery slowdown should go in this check.
 		modded_time = time * tool.toolspeed
@@ -353,6 +362,7 @@
 #undef SURGERY_SPEED_DISSECTION_MODIFIER
 #undef SURGERY_SPEED_MORBID_CURIOSITY
 #undef SURGERY_SLOWDOWN_CAP_MULTIPLIER
+#undef SURGERY_SELF_SURGERY_SLOWDOWN_CAP_MULTIPLIER // VENUS ADDITION - Self-surgery cap multiplier
 #undef SURGERY_STATE_STARTED
 #undef SURGERY_STATE_FAILURE
 #undef SURGERY_STATE_SUCCESS
