@@ -1,4 +1,0 @@
-author: "Zeddersds"
-delete-after: True
-changes:
-  - rscadd: "Added chemical_flags = REAGENT_CAN_BE_SYNTHESIZED to several lewd chems."
