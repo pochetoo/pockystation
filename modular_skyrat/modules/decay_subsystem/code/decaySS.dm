@@ -81,7 +81,9 @@ SUBSYSTEM_DEF(decay)
 	if(!possible_turfs)
 		CRASH("SSDecay had no possible turfs to use!")
 
-	severity_modifier = rand(1, 3) //VENUS EDIT: Changed rand max from 4 to 3
+	var/severity_modifier = CONFIG_GET(number/ssdecay_intensity)
+	if(!severity_modifier || severity_modifier == 5)
+		severity_modifier = rand(1, 3) //VENUS EDIT: Changed rand max from 4 to 3
 
 	message_admins("SSDecay severity modifier set to [severity_modifier]")
 	log_world("SSDecay severity modifier set to [severity_modifier]")
