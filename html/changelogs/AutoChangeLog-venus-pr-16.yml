@@ -1,5 +1,0 @@
-author: "ariaworld"
-delete-after: True
-changes:
-  - rscadd: "Monadic Cognomerge event, an event that will give people on station (not in dorms), a random negative temporary quirk for 5 minutes."
-  - rscadd: "Random chimp event, brace for apes."
