@@ -1289,13 +1289,20 @@ $border-width-px: $border-width * 1px;
 .mentor {
   color: #8a2be2;
 }
-.looc {
+//VENUS EDIT START (Light blue LOOC and RLOOC)
+/* .looc {
   color: #d8b555;
 }
 .rlooc {
   color: #b09448;
+} */
+.looc {
+  color: #6699cc;
 }
-
+.rlooc {
+  color: #507294;
+}
+//VENUS EDIT END
 .userlove {
   color: #ff1493;
   font-style: italic;
@@ -1739,12 +1746,20 @@ $border-width-px: $border-width * 1px;
 .mentor {
   color: #8a2be2;
 }
-.looc {
+//VENUS EDIT START (Light blue LOOC and RLOOC)
+/* .looc {
   color: #d8b555;
 }
 .rlooc {
   color: #b09448;
+} */
+.looc {
+  color: #6699cc;
 }
+.rlooc {
+  color: #507294;
+}
+//VENUS EDIT END
 
 .examine_block {
   background: rgba(0, 0, 0, 0.2);
