@@ -47,7 +47,7 @@
 	var/audio_alert = 'sound/announcer/notice/notice2.ogg'
 
 /datum/round_event/cognomerge/announce()
-	priority_announce("Alert [station_name()]: Unitary conceptual metastasization in progress, temporary cognitive and physiological maluses may result.",
+	priority_announce("Alert, [station_name()]: Unitary conceptual metastasization in progress, temporary cognitive and physiological maluses may result.",
 	sound = audio_alert,
 	sender_override = "Metaphysical Entity Watchdog")
 
@@ -91,7 +91,7 @@
 	return victim.add_quirk(chosen_quirk)
 
 /datum/round_event/cognomerge/end()
-	priority_announce("Update [station_name()]: The assimilatory phase has reached its conclusion, no further health risk is anticipated at this time.",
+	priority_announce("Update, [station_name()]: The assimilatory phase has reached its conclusion, no further health risk is anticipated at this time.",
 	sound = audio_alert,
 	sender_override = "Metaphysical Entity Watchdog")
 
