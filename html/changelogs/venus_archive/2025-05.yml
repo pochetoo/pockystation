@@ -17,3 +17,6 @@
   - rscadd: Monadic Cognomerge event, an event that will give people on station (not
       in dorms), a random negative temporary quirk for 5 minutes.
   - rscadd: Random chimp event, brace for apes.
+2025-05-19:
+  Zeddersds:
+  - bugfix: Proteans won't get thirsty anymore.
