@@ -81,8 +81,8 @@
 		message = span_info("[src] oafishly stares in front of themselves.")
 	visible_message(message)
 	animate(client, pixel_x = world.icon_size*_x, pixel_y = world.icon_size*_y, ttime)
-	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_looking))
-	RegisterSignal(src, COMSIG_ATOM_PRE_DIR_CHANGE, PROC_REF(stop_looking))
+	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_looking), override = TRUE)
+	RegisterSignal(src, COMSIG_ATOM_PRE_DIR_CHANGE, PROC_REF(stop_looking), override = TRUE)
 	// update_cone_show()
 
 /mob/living/proc/stop_looking()
