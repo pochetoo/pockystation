@@ -92,7 +92,7 @@
 /datum/weather/rad_storm/nebula
 	//VENUS EDIT START: (Protect dorms and maintenance from radiation) | ORIGINAL:
 	//protected_areas = list(/area/shuttle, /area/station/maintenance/radshelter)
-	protected_areas = list(/area/shuttle, /area/station/maintenance, /area/station/commons/dorms, /area/station/commons/locker)
+	protected_areas = list(/area/shuttle, /area/station/maintenance, /area/station/commons/dorms)
 	//VENUS EDIT END
 
 	weather_overlay = "nebula_radstorm"
