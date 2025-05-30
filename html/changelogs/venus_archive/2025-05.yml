@@ -20,3 +20,6 @@
 2025-05-19:
   Zeddersds:
   - bugfix: Proteans won't get thirsty anymore.
+2025-05-31:
+  ariaworld:
+  - balance: Vent clog event will no longer spawn in dorms.
