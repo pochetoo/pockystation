@@ -98,6 +98,7 @@
 
 	//VENUS ADDITION START: Add a note about the vent's area
 	if(istype(get_area(src), /area/station/commons/dorms))
+		. += span_love("A colorful engraving reads: \"❤ Filtered for your comfort ❤\"")
 		. += span_notice("This one seems to be protected against ventilation clogs.")
 	//VENUS ADDITION END
 
