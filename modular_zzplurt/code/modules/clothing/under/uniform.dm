@@ -205,9 +205,10 @@
 /obj/item/clothing/under/misc/leia_outfit
 	name = "space princess outfit"
 	desc = "Chain for your Master's erotic asphyxiation not included."
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "leia"
+	icon_state = "/obj/item/clothing/under/misc/leia_outfit"
+	post_init_icon_state = "leia"
 	icon_state_preview = "leia"
 	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
@@ -228,9 +229,10 @@
 //
 /obj/item/clothing/under/performer/greyscale
 	name = "colorable performers one piece"
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "poly_performer"
+	icon_state = "/obj/item/clothing/under/performer/greyscale"
+	post_init_icon_state = "poly_performer"
 	greyscale_colors = "#FFFFFF"
 	greyscale_config = /datum/greyscale_config/performer
 	greyscale_config_worn = /datum/greyscale_config/performer/worn
@@ -385,9 +387,10 @@
 /obj/item/clothing/under/misc/wench
 	name = "Wench's Dress"
 	desc = "A white dress styled like a Ye Old Barmaid. Saucy!"
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "wench"
+	icon_state = "/obj/item/clothing/under/misc/wench"
+	post_init_icon_state = "wench"
 	can_adjust = TRUE
 	alt_covers_chest = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
@@ -400,9 +403,10 @@
 /obj/item/clothing/under/misc/tian_dress
 	name = "Tian Dress"
 	desc= "A simple, tight fitting purple dress."
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "tian_dress"
+	icon_state = "/obj/item/clothing/under/misc/tian_dress"
+	post_init_icon_state = "tian_dress"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#7c1649#006cec"
@@ -413,9 +417,10 @@
 /obj/item/clothing/under/misc/vneck
 	name = "V-neck Dress"
 	desc = "A black V-neck Dress with an exaggerated neckline covered in a sheer mesh."
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "vneckdress"
+	icon_state = "/obj/item/clothing/under/misc/vneck"
+	post_init_icon_state = "vneckdress"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#1c1c1c"
@@ -426,9 +431,10 @@
 /obj/item/clothing/under/misc/revealingdress
 	name = "Revealing Dress"
 	desc = "A very revealing dress. Is this work appropriate?"
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "revealingdress"
+	icon_state = "/obj/item/clothing/under/misc/revealingdress"
+	post_init_icon_state = "revealingdress"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#211919#4ce2ff"
@@ -439,10 +445,11 @@
 /obj/item/clothing/under/misc/rippedpunk
 	name = "ripped punk jeans"
 	desc = "Black ripped jeans and a fishnet top. How punk."
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
 	worn_icon_digi = 'modular_zzplurt/icons/mob/clothing/uniform_digi.dmi'
-	icon_state = "rippedpunk"
+	icon_state = "/obj/item/clothing/under/misc/rippedpunk"
+	post_init_icon_state = "rippedpunk"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	greyscale_colors = "#211919#4ce2ff"
@@ -453,9 +460,10 @@
 /obj/item/clothing/under/misc/gothic
 	name = "gothic dress"
 	desc = "A polychromatic dress with a sheer mesh over it, tastefully old school goth."
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "gothic"
+	icon_state = "/obj/item/clothing/under/misc/gothic"
+	post_init_icon_state = "gothic"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#232323#232323#232323#232323"
@@ -466,9 +474,10 @@
 /obj/item/clothing/under/misc/pentagram
 	name = "pentagram dress"
 	desc = "A polychromatic dress with straps over the chest in the shape of a pentagram."
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "pentagram"
+	icon_state = "/obj/item/clothing/under/misc/pentagram"
+	post_init_icon_state = "pentagram"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#211919#232323"
@@ -479,9 +488,10 @@
 /obj/item/clothing/under/misc/swoop
 	name = "swooped dress"
 	desc = "A polychromatic dress that swoops to the side."
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "swoop"
+	icon_state = "/obj/item/clothing/under/misc/swoop"
+	post_init_icon_state = "swoop"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#f2ce66#272525"
@@ -492,9 +502,10 @@
 /obj/item/clothing/under/misc/asym
 	name = "asymmetrical slit skirt"
 	desc = "A futuristic uniform with asymmetrical slit skirt. Trendy!"
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "asym"
+	icon_state = "/obj/item/clothing/under/misc/asym"
+	post_init_icon_state = "asym"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#8abe67#8abe67"
@@ -505,9 +516,10 @@
 /obj/item/clothing/under/misc/sheer
 	name = "sheer dress"
 	desc = "An entirely sheer dress. Best worn with nothing underneath!"
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "sheer"
+	icon_state = "/obj/item/clothing/under/misc/sheer"
+	post_init_icon_state = "sheer"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#3e769c"
@@ -518,9 +530,10 @@
 /obj/item/clothing/under/misc/corsetdress
 	name = "corset dress"
 	desc = "A polychromatic dress with a corset, really makes the gals pop."
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/costume.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "corsetdress"
+	icon_state = "/obj/item/clothing/under/misc/corsetdress"
+	post_init_icon_state = "corsetdress"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = CHEST|GROIN|LEGS
 	greyscale_colors = "#1e1b1e#f6efdb#4b6c5a#d4ccb3"
@@ -531,9 +544,10 @@
 /obj/item/clothing/under/misc/miniskirt
 	name = "fashionable miniskirt"
 	desc = "An impractically short miniskirt allegedly making waves through the local fashion scene."
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/_under.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "miniskirt"
+	icon_state = "/obj/item/clothing/under/misc/miniskirt"
+	post_init_icon_state = "miniskirt"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = GROIN
 	greyscale_colors = "#0e0e0e"
@@ -544,9 +558,10 @@
 /obj/item/clothing/under/misc/miniskirt_sheer
 	name = "fashionable sheer miniskirt"
 	desc = "An impractically short miniskirt, can it even be called clothing though?"
-	icon = 'modular_zzplurt/icons/obj/clothing/uniforms.dmi'
+	icon = 'icons/map_icons/clothing/under/_under.dmi'
 	worn_icon = 'modular_zzplurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "miniskirt_sheer"
+	icon_state = "/obj/item/clothing/under/misc/miniskirt_sheer"
+	post_init_icon_state = "miniskirt_sheer"
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 	body_parts_covered = GROIN
 	greyscale_colors = "#0e0e0e"
