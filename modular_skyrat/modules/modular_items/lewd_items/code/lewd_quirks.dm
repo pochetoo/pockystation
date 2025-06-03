@@ -33,6 +33,7 @@
 	///The time between each desire message within company
 	var/desire_cooldown_number = 30 SECONDS
 	///The list of manual emotes that will be done when unsatisfied
+/* VENUS REMOVAL: No emote spam. Shoo
 	var/static/list/lust_emotes = list(
 		"pants as their body trembles lightly.",
 		"lightly touches themselves up and down, feeling every inch.",
@@ -40,7 +41,7 @@
 		"places their hands on their hip as they slowly gyrate.",
 		"moans, their head tilted slightly."
 	)
-
+*/
 /**
  * If we are not satisfied, this will be ran through
  */
@@ -53,7 +54,7 @@
 	//the message that will be sent to the owner at the end
 	var/lust_message = "Your breath begins to feel warm..."
 	//we are using if statements so that it slowly becomes more and more to the person
-	human_owner.manual_emote(pick(lust_emotes))
+	//human_owner.manual_emote(pick(lust_emotes)) VENUS REMOVAL
 	if(stress >= 60)
 		//human_owner.set_jitter_if_lower(40 SECONDS) VENUS REMOVAL
 		lust_message = "You feel a static sensation all across your skin..."
@@ -138,7 +139,7 @@
 			continue
 		return TRUE
 	return FALSE
-
+/* VENUS REMOVAL: No text splitting
 /datum/brain_trauma/very_special/bimbo/handle_speech(datum/source, list/speech_args)
 	if(!HAS_TRAIT(owner, TRAIT_BIMBO)) //You have the trauma but not the trait, go ahead and fail here
 		return ..()
@@ -153,7 +154,7 @@
 
 	message = jointext(split_message, " ")
 	speech_args[SPEECH_MESSAGE] = message
-
+*/
 /datum/brain_trauma/very_special/bimbo/on_gain()
 	. = ..()
 	owner.add_mood_event("bimbo", /datum/mood_event/bimbo)
