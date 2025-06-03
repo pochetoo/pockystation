@@ -2,3 +2,6 @@
   WinterDarkraven:
   - balance: Bimbos no longer suffer lethal oxygen damage, instead they need to catch
       their breath.
+2025-06-04:
+  Goku:
+  - bugfix: Self Actualization Device will now correctly restore your preferences/character's external organs such as genitals, mutant bodyparts/external organs and markings.
