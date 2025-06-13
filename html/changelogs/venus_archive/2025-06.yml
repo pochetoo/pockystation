@@ -10,4 +10,9 @@
       people).
 2025-06-04:
   Goku:
-  - bugfix: Self Actualization Device will now correctly restore your preferences/character's external organs such as genitals, mutant bodyparts/external organs and markings.
+  - bugfix: Self Actualization Device will now correctly restore your preferences/character's
+      external organs such as genitals, mutant bodyparts/external organs and markings.
+2025-06-13:
+  Gboster-0:
+  - bugfix: The legion megafauna now drops non-dense necropolis chests until you touch
+      them, to avoid the legion breaking them
