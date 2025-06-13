@@ -1,6 +1,10 @@
 /datum/loadout_item/toys/nobl_plush
 	ckeywhitelist = null //request of the donator
 
+/datum/loadout_item/toys/nobl_plush/New(category)
+	ckeywhitelist = null //idk why the above override doesn't work
+	. = ..()
+
 /datum/loadout_item/toys/plushie_tree_ferret
 	name = "Tree Ferret Plushie"
 	item_path = /obj/item/toy/plush/tree_ferret
