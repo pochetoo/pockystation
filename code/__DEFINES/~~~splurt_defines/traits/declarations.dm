@@ -106,5 +106,5 @@
 // These traits are applied to /obj/item/organ/liver
 #define TRAIT_CARGO_METABOLISM "cargo_metabolism"
 
-/// Trait that makes you unable to get pregnant, make people pregnant, and triggers abortions too
+/// Trait that makes you unable to get pregnant, make people pregnant, causes eggs to fail to develop
 #define TRAIT_INFERTILE "pregnancy_infertile"
