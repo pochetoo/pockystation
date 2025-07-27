@@ -133,8 +133,8 @@
 			speed_mod *= SURGERY_SPEED_TRAIT_STERILE
 	// BUBBER EDIT CHANGE END
 
-	// VENUS ADDITION BEGIN - Self-surgery penalty
-	if(user == target && !(surgery.requires_bodypart_type & BODYTYPE_ROBOTIC))
+	// VENUS ADDITION BEGIN - Self-surgery penalty (only if no skillchip)
+	if(user == target && !(surgery.requires_bodypart_type & BODYTYPE_ROBOTIC) && !HAS_TRAIT(user, TRAIT_SELF_SURGERY))
 		speed_mod *= SURGERY_SPEED_SELF_SURGERY_MODIFIER
 	// VENUS ADDITION END
 
@@ -162,7 +162,13 @@
 	modded_time *= target_modifiers[SPEED_MOD_INDEX]
 
 	fail_prob = min(max(0, fail_prob),99) // clamp fail_prob between 0 and 99
-	modded_time = min(modded_time, time * SURGERY_SLOWDOWN_CAP_MULTIPLIER)// cap modded_time at time*modifier
+	
+	//modded_time = min(modded_time, time * SURGERY_SLOWDOWN_CAP_MULTIPLIER)// cap modded_time at time*modifier //VENUS EDIT replaced with cap multiplier check below
+	
+	// VENUS ADDITION BEGIN - Use higher time cap for self-surgery without skillchip
+	var/cap_multiplier = (user == target && !(surgery.requires_bodypart_type & BODYTYPE_ROBOTIC) && !HAS_TRAIT(user, TRAIT_SELF_SURGERY)) ? SURGERY_SELF_SURGERY_SLOWDOWN_CAP_MULTIPLIER : SURGERY_SLOWDOWN_CAP_MULTIPLIER
+	modded_time = min(modded_time, time * cap_multiplier)// cap modded_time at time*modifier
+	// VENUS ADDITION END
 
 	if(iscyborg(user))//any immunities to surgery slowdown should go in this check.
 		modded_time = time * tool.toolspeed
