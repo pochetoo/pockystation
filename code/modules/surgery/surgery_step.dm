@@ -162,7 +162,6 @@
 	modded_time *= target_modifiers[SPEED_MOD_INDEX]
 
 	fail_prob = min(max(0, fail_prob),99) // clamp fail_prob between 0 and 99
-	
 	//modded_time = min(modded_time, time * SURGERY_SLOWDOWN_CAP_MULTIPLIER)// cap modded_time at time*modifier //VENUS EDIT replaced with cap multiplier check below
 	
 	// VENUS ADDITION BEGIN - Use higher time cap for self-surgery without skillchip
