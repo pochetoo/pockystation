@@ -18,13 +18,13 @@ required_map = "birdshot.dmm"
 coordinates = [50, 106, 1]
 trait_name = "Station"
 
-# Birdshot Arrivals
-[templates.birdshot_arrivals]
-map_files = ["birdshot_arrivals.dmm"]
-directory = "_maps/bubber/automapper/templates/Birdshot/"
-required_map = "birdshot.dmm"
-coordinates = [136, 61, 1]
-trait_name = "Station"
+# Birdshot Arrivals VENUS AUTOMAPPER REMOVAL (FOR INTERLINK REMOVAL)
+#[templates.birdshot_arrivals]
+#map_files = ["birdshot_arrivals.dmm"]
+#directory = "_maps/bubber/automapper/templates/Birdshot/"
+#required_map = "birdshot.dmm"
+#coordinates = [136, 61, 1]
+#trait_name = "Station"
 
 # Birdshot Barber
 [templates.birdshot_barber]
@@ -92,13 +92,13 @@ coordinates = [100, 129, 1]
 trait_name = "Station"
 
 # CATWALK MAP EDITS
-# Catwalk Arrivals
-[templates.catwalk_arrivals]
-map_files = ["catwalk_arrivals.dmm"]
-directory = "_maps/bubber/automapper/templates/CatwalkStation/"
-required_map = "CatwalkStation_2023.dmm"
-coordinates = [118, 54, 1]
-trait_name = "Station"
+# Catwalk Arrivals VENUS AUTOMAPPER REMOVAL (FOR INTERLINK REMOVAL)
+#[templates.catwalk_arrivals]
+#map_files = ["catwalk_arrivals.dmm"]
+#directory = "_maps/bubber/automapper/templates/CatwalkStation/"
+#required_map = "CatwalkStation_2023.dmm"
+#coordinates = [118, 54, 1]
+#trait_name = "Station"
 
 # Catwalk Barber
 [templates.catwalk_barber]
@@ -182,13 +182,13 @@ required_map = "DeltaStation2.dmm"
 coordinates = [207, 127, 1]
 trait_name = "Station"
 
-# Deltastation Arrivals
-[templates.deltastation_arrivals]
-map_files = ["deltastation_arrivals.dmm"]
-directory = "_maps/bubber/automapper/templates/Deltastation/"
-required_map = "DeltaStation2.dmm"
-coordinates = [126, 195, 1]
-trait_name = "Station"
+# Deltastation Arrivals VENUS AUTOMAPPER REMOVAL (FOR INTERLINK REMOVAL)
+#[templates.deltastation_arrivals]
+#map_files = ["deltastation_arrivals.dmm"]
+#directory = "_maps/bubber/automapper/templates/Deltastation/"
+#required_map = "DeltaStation2.dmm"
+#coordinates = [126, 195, 1]
+#trait_name = "Station"
 
 # Deltastation Barber
 [templates.deltastation_barber]
@@ -247,13 +247,13 @@ required_map = "IceBoxStation.dmm"
 coordinates = [101, 178, 2]
 trait_name = "Station"
 
-# IceBoxStation Arrivals
-[templates.iceboxstation_arrivals]
-map_files = ["iceboxstation_arrivals.dmm"]
-directory = "_maps/bubber/automapper/templates/IceBoxStation/"
-required_map = "IceBoxStation.dmm"
-coordinates = [8, 115, 3]
-trait_name = "Station"
+# IceBoxStation Arrivals VENUS AUTOMAPPER REMOVAL (FOR INTERLINK REMOVAL)
+#[templates.iceboxstation_arrivals]
+#map_files = ["iceboxstation_arrivals.dmm"]
+#directory = "_maps/bubber/automapper/templates/IceBoxStation/"
+#required_map = "IceBoxStation.dmm"
+#coordinates = [8, 115, 3]
+#trait_name = "Station"
 
 # IceBoxStation Barber
 [templates.iceboxstation_barber]
@@ -386,13 +386,13 @@ required_map = "MetaStation.dmm"
 coordinates = [105, 171, 1]
 trait_name = "Station"
 
-# Metastation Arrivals
-[templates.metastaton_arrivals]
-map_files = ["metastation_arrivals.dmm"]
-directory = "_maps/bubber/automapper/templates/MetaStation/"
-required_map = "MetaStation.dmm"
-coordinates = [20, 107, 1]
-trait_name = "Station"
+# Metastation Arrivals VENUS AUTOMAPPER REMOVAL (FOR INTERLINK REMOVAL)
+#[templates.metastaton_arrivals]
+#map_files = ["metastation_arrivals.dmm"]
+#directory = "_maps/bubber/automapper/templates/MetaStation/"
+#required_map = "MetaStation.dmm"
+#coordinates = [20, 107, 1]
+#trait_name = "Station"
 
 # Metastation Barber
 [templates.metastation_barber]
@@ -468,13 +468,13 @@ required_map = "NebulaStation.dmm"
 coordinates = [161, 116, 1]
 trait_name = "Station"
 
-# Nebulastation Arrivals
-[templates.nebulastation_arrivals]
-map_files = ["nebulastation_arrivals.dmm"]
-directory = "_maps/bubber/automapper/templates/NebulaStation/"
-required_map = "NebulaStation.dmm"
-coordinates = [122, 121, 2]
-trait_name = "Station"
+# Nebulastation Arrivals VENUS AUTOMAPPER REMOVAL (FOR INTERLINK REMOVAL)
+#[templates.nebulastation_arrivals]
+#map_files = ["nebulastation_arrivals.dmm"]
+#directory = "_maps/bubber/automapper/templates/NebulaStation/"
+#required_map = "NebulaStation.dmm"
+#coordinates = [122, 121, 2]
+#trait_name = "Station"
 
 # Nebulastation Aux Docking Bay
 [templates.nebulastation_aux]
@@ -573,13 +573,13 @@ required_map = "tramstation.dmm"
 coordinates = [69, 162, 2]
 trait_name = "Station"
 
-# Tramstation Arrivals
-[templates.tramstation_arrivals]
-map_files = ["tramstation_arrivals.dmm"]
-directory = "_maps/bubber/automapper/templates/tramstation/"
-required_map = "tramstation.dmm"
-coordinates = [8, 96, 2]
-trait_name = "Station"
+# Tramstation Arrivals VENUS AUTOMAPPER REMOVAL (FOR INTERLINK REMOVAL)
+#[templates.tramstation_arrivals]
+#map_files = ["tramstation_arrivals.dmm"]
+#directory = "_maps/bubber/automapper/templates/tramstation/"
+#required_map = "tramstation.dmm"
+#coordinates = [8, 96, 2]
+#trait_name = "Station"
 
 # Tramstation Barber
 [templates.tramstation_barber]
@@ -648,12 +648,12 @@ coordinates = [63, 127, 2]
 trait_name = "Station"
 
 # Wawastation Arrivals
-[templates.wawastation_arrivals]
-map_files = ["wawastation_arrivals.dmm"]
-directory = "_maps/bubber/automapper/templates/wawastation/"
-required_map = "wawastation.dmm"
-coordinates = [69, 81, 2]
-trait_name = "Station"
+#[templates.wawastation_arrivals]
+#map_files = ["wawastation_arrivals.dmm"]
+#directory = "_maps/bubber/automapper/templates/wawastation/"
+#required_map = "wawastation.dmm"
+#coordinates = [69, 81, 2]
+#trait_name = "Station"
 
 # Wawastation Barber
 [templates.wawastation_barber]
