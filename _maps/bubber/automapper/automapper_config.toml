@@ -867,3 +867,22 @@ directory = "_maps/splurt/automapper/templates/metastation/"
 required_map = "MetaStation.dmm"
 coordinates = [145, 91, 1]
 trait_name = "Station"
+
+#VENUS EDITS -------------------------------
+# ADD ALL VENUS EDITS BENEATH THIS!
+
+# Boxstation Arrivals (FOR INTERLINK REMOVAL, positions docking port to work with boxstation arrival shuttle and not interlink ferry)
+[templates.boxstation_arrivals]
+map_files = ["boxstation_arrivals.dmm"]
+directory = "_maps/venus/automapper/templates/BoxStation/"
+required_map = "BoxStation.dmm"
+coordinates = [47, 136, 1]
+trait_name = "Station"
+
+# Kilostation Arrivals (FOR INTERLINK REMOVAL, positions docking port to work with kilostation arrival shuttle and not interlink ferry)
+[templates.kilostation_arrivals]
+map_files = ["kilostation_arrivals.dmm"]
+directory = "_maps/venus/automapper/templates/KiloStation/"
+required_map = "KiloStation.dmm"
+coordinates = [151, 77, 1]
+trait_name = "Station"

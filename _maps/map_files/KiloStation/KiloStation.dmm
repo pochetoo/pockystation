@@ -26847,7 +26847,6 @@
 	dir = 4;
 	dwidth = 1;
 	height = 13;
-    roundstart_template = /datum/map_template/shuttle/arrival/kilo; //VENUS ADDITION (FOR INTERLINK REMOVAL)
 	shuttle_id = "arrivals_stationary";
 	name = "arrivals";
 	width = 5
