@@ -24,7 +24,7 @@
 
 	switch(action)
 		if("select_simple_color")
-			if(can_be_colored && !can_be_greyscale)
+			if(can_be_colored) //VENUS EDIT: Removed && !can_be_greyscale
 				return set_item_simple_color(manager, user)
 
 /datum/loadout_item/on_equip_item(obj/item/equipped_item, datum/preferences/preference_source, list/preference_list, mob/living/carbon/human/equipper, visuals_only)
@@ -44,7 +44,7 @@
 /datum/loadout_item/get_ui_buttons()
 	. = ..()
 
-	if(can_be_colored && !can_be_greyscale)
+	if(can_be_colored) //VENUS EDIT: Removed && !can_be_greyscale
 		UNTYPED_LIST_ADD(., list(
 			"label" = "Simple recolor",
 			"act_key" = "select_simple_color",
