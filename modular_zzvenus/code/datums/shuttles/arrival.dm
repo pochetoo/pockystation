@@ -5,5 +5,7 @@
 
 //This is the interlink ferry, but modified to not have the console
 /datum/map_template/shuttle/arrivals_venus_skyrat
+	name = "NTV Relay (VENUS Arrivals)"
 	prefix = "_maps/shuttles/zzvenus/"
 	suffix = "arrivals_venus_skyrat"
+	who_can_purchase = null
