@@ -3,9 +3,8 @@
 	suffix = "venus_biodome"
 	name = "arrival shuttle (Biodome)"
 
-//This is the interlink ferry, but modified to not have the console
-/datum/map_template/shuttle/arrivals_venus_skyrat
-	name = "NTV Relay (VENUS Arrivals)"
+//This is the interlink ferry, but modified to work as an arrival shuttle.
+/datum/map_template/shuttle/arrival/venus_ferry
 	prefix = "_maps/shuttles/zzvenus/"
-	suffix = "arrivals_venus_skyrat"
-	who_can_purchase = null
+	suffix = "arrivals_venus_ferry"
+	name = "arrival shuttle (Venus Ferry)"
