@@ -886,3 +886,19 @@ directory = "_maps/venus/automapper/templates/KiloStation/"
 required_map = "KiloStation.dmm"
 coordinates = [151, 77, 1]
 trait_name = "Station"
+
+# Biodome Arrivals (FOR INTERLINK REMOVAL, positions docking port to work with biodome arrival shuttle and not interlink ferry)
+[templates.biodome_arrivals]
+map_files = ["biodome_arrivals.dmm"]
+directory = "_maps/venus/automapper/templates/Biodome/"
+required_map = "biodome.dmm"
+coordinates = [47, 133, 2]
+trait_name = "Station"
+
+# Voidraptor Arrivals (FOR INTERLINK REMOVAL, changes docking port to work with venus ferry and not interlink ferry)
+[templates.voidraptor_arrivals]
+map_files = ["voidraptor_arrivals.dmm"]
+directory = "_maps/venus/automapper/templates/VoidRaptor/"
+required_map = "VoidRaptor.dmm"
+coordinates = [85, 150, 1]
+trait_name = "Station"
