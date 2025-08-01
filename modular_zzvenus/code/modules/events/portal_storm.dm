@@ -15,9 +15,4 @@
 	)
 
 /datum/round_event/portal_storm/portal_storm_monkey/announce(fake)
-	set waitfor = 0
-	sound_to_playing_players('sound/music/antag/monkey.ogg')
-	sleep(7 SECONDS)
 	priority_announce("Random Chimp Event detected en route to [station_name()]. Brace for mad apes.")
-	sleep(2 SECONDS)
-	sound_to_playing_players('modular_zzvenus/sound/misc/monkeystorm.ogg')
