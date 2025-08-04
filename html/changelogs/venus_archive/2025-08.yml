@@ -1,0 +1,4 @@
+2025-08-04:
+  Goku:
+  - rscadd: Solar panels now have an automatic control feature that scans for new solar equipment and enables auto tracking every 30 seconds.
+  - rscadd: SMES inside solar maintenance areas will now automatically configure themselves for optimal solar charging on map load.
