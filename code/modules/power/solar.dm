@@ -55,6 +55,12 @@
 		panel_edge.icon_state = "solar_panel_[material_type.name]_edge"
 	//VENUS ADDITION END
 
+//VENUS ADDITION START: Examine text for solar panels
+/obj/machinery/power/solar/examine()
+	. = ..()
+	. += span_notice("A panel of <b>[material_type.name]</b> is currently installed.")
+//VENUS ADDITION END
+
 /obj/machinery/power/solar/Destroy()
 	unset_control() //remove from control computer
 	QDEL_NULL(panel)
