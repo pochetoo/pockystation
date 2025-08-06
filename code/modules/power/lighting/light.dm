@@ -186,7 +186,12 @@
 	if(nightshift_enabled)
 		. += mutable_appearance(overlay_icon, "[base_state]_nightshift")
 		return
-	. += mutable_appearance(overlay_icon, base_state)
+	//VENUS EDIT START: Makes lights' overlay color the same as the light color (bulb colour)
+	//ORIGINAL: . += mutable_appearance(overlay_icon, base_state)
+	var/mutable_appearance/normal_overlay = mutable_appearance(overlay_icon, base_state)
+	normal_overlay.color = bulb_colour
+	. += normal_overlay
+	//VENUS EDIT END
 
 
 // SKYRAT EDIT ADDITION BEGIN - AESTHETICS
