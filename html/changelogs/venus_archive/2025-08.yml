@@ -6,4 +6,4 @@
   Goku:
   - balance: Solar panels on the station are now made of titanium glass by default, increasing their power generation efficiency.
   - rscadd: Solar panels now show their glass type in their examine text.
-  - rscadd: Light fixtures' overlays color now matches the light's bulb color, enhancing visual consistency.
+  - bugfix: Light fixtures' overlays color now matches the light's emitted color, enhancing visual consistency.

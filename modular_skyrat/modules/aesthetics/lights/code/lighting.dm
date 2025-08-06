@@ -35,6 +35,7 @@
 			)
 		if(play_sound)
 			playsound(src.loc, 'modular_skyrat/modules/aesthetics/lights/sound/light_on.ogg', 65, 1)
+		update(FALSE) //VENUS ADDITION: Ensure the light tube/bulb overlay is updated (useful for nightshift/emergency lights)
 
 /obj/machinery/light/Initialize(mapload = TRUE)
 	. = ..()
