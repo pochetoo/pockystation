@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(decay)
 		/obj/structure/mob_spawner/beehive,
 		/obj/structure/mob_spawner/rats,
 		//VENUS ADDITION START - More mob spawners
-		/obj/structure/mob_spawner/snake,
+		/obj/structure/mob_spawner/roach,
 		/obj/structure/mob_spawner/beehive/toxic
 		//VENUS ADDITION END
 	)
@@ -149,7 +149,7 @@ SUBSYSTEM_DEF(decay)
 				if(!iterating_floor.Enter(spawned_spawner))
 					qdel(spawned_spawner)
 			*/
-			//VENUS EDIT END
+			//VENUS REMOVAL END
 
 /datum/controller/subsystem/decay/proc/do_engineering()
 	for(var/area/station/engineering/iterating_engineering in possible_areas)

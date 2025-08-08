@@ -205,9 +205,9 @@
 	AddComponent(/datum/component/obeys_commands, pet_commands)
 	AddElement(/datum/element/tiny_mob_hunter)
 
-//VENUS ADDITION START: Aggressive duct spider
+//VENUS ADDITION START: maintenance duct spider
 /mob/living/basic/spider/maintenance/hostile
-	name = "aggressive duct spider"
+	name = "maintenance duct spider"
 	desc = "A maintenance-dwelling spider with an attitude problem and uncomfortably sharp fangs. This one definitely bites."
 	maxHealth = 15
 	health = 15

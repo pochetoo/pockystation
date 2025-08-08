@@ -198,6 +198,18 @@
 	max_mobs = 6
 	color = LIGHT_COLOR_ELECTRIC_GREEN
 
+//VENUS ADDITION START: Cockroach egg spawner
+/obj/structure/mob_spawner/roach
+	name = "disgusting egg sacs"
+	desc = "These leathery egg cases are twitching and making soft chittering sounds from within..."
+	icon_state = "nest_eggs"
+	light_color = LIGHT_COLOR_ORANGE
+	monster_types = list(/mob/living/basic/cockroach/maintenance, /mob/living/basic/cockroach/sewer, /mob/living/basic/cockroach/bloodroach)
+	max_mobs = 8
+	spawn_cooldown = 6 SECONDS
+	loot = list(/obj/effect/decal/cleanable/insectguts)
+//VENUS ADDITION END
+
 /obj/structure/mob_spawner/snake
 	name = "disgusting eggs"
 	desc = "These pulsating eggs are oozing out a puss like substance..."
