@@ -90,7 +90,6 @@
 	// We drop then (usually) immediately delete the limb to avoid reuse
 	drop_limb(dismembered = TRUE)
 
-	// VENUS ADDITION: Head pulverize organ dump
 	if(body_zone == BODY_ZONE_HEAD && !QDELETED(src) && T)
 		for(var/obj/item/organ/O as anything in contents)
 			O.Remove(limb_owner)
