@@ -11,3 +11,4 @@
   Goku:
   - rscadd: Limbs and heads can now be gibbed by brute damage, similar to sharp dismemberment.
   - rscadd: Unarmed combat now tells you and the attacker which limb is being targeted.
+  - balance: Only head & chest brute/burn (plus normal oxy/blood loss) now determine crit/death; limb brute/burn no longer push you into crit.
