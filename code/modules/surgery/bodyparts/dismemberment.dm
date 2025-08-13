@@ -56,6 +56,55 @@
 
 	return TRUE
 
+/** VENUS ADDITION START - Gibbing limbs with brute damage
+ * Pulverize (blunt-only): variant of dismember used for blunt overkill that destroys the limb into gore chunks
+ * Differences vs dismember():
+ * - Plays a heavier sound and different message
+ * - Spawns extra blood splatter & gibs
+ * - Does NOT leave behind a retrievable limb item (the limb is qdel'd)
+ */
+/obj/item/bodypart/proc/pulverize_limb(wounding_type = WOUND_BLUNT) // VENUS ADDITION FEATURE
+	if(!owner || (bodypart_flags & BODYPART_UNREMOVABLE))
+		return FALSE
+	var/mob/living/carbon/limb_owner = owner
+	if(HAS_TRAIT(limb_owner, TRAIT_GODMODE) || HAS_TRAIT(limb_owner, TRAIT_NODISMEMBER))
+		return FALSE
+
+	var/turf/T = get_turf(limb_owner)
+	if(T)
+		limb_owner.add_splatter_floor(T)
+
+	limb_owner.visible_message(span_bolddanger("[limb_owner]'s [plaintext_zone] is pulverized into a grisly paste!"),
+		span_userdanger("Your [plaintext_zone] is pulverized into a grisly paste!"))
+	INVOKE_ASYNC(limb_owner, TYPE_PROC_REF(/mob, emote), "scream")
+	playsound(T, 'sound/effects/dismember.ogg', 90, TRUE)
+	limb_owner.add_mood_event("dismembered_[body_zone]", /datum/mood_event/dismembered, src)
+	limb_owner.add_mob_memory(/datum/memory/was_dismembered, lost_limb = src)
+
+	if (wounding_type)
+		LAZYSET(limb_owner.body_zone_dismembered_by, body_zone, wounding_type)
+
+	if (can_bleed())
+		limb_owner.bleed(rand(20, 40)) // VENUS EDIT (balanced initial bleed)
+
+	// We drop then (usually) immediately delete the limb to avoid reuse
+	drop_limb(dismembered = TRUE)
+
+	// VENUS ADDITION: Head pulverize organ dump
+	if(body_zone == BODY_ZONE_HEAD && !QDELETED(src) && T)
+		for(var/obj/item/organ/O as anything in contents)
+			O.Remove(limb_owner)
+			O.forceMove(T)
+	if(!QDELETED(src))
+		qdel(src)
+	if(T)
+		new /obj/effect/decal/cleanable/blood/gibs(T, null, GET_ATOM_BLOOD_DNA(limb_owner))
+	if (can_bleed())
+		limb_owner.bleed(rand(20, 40))
+
+	return TRUE
+//VENUS ADDITION END
+
 /obj/item/bodypart/chest/dismember(dam_type = BRUTE, silent=TRUE, wounding_type)
 	if(!owner)
 		return FALSE
@@ -195,6 +244,10 @@
 		base_chance += iterated_wound.get_dismember_chance_bonus(base_chance)
 
 	if(prob(base_chance))
+		//VENUS ADDITION START: Blunt limb gibbing
+		if(wounding_type == WOUND_BLUNT && body_zone != BODY_ZONE_CHEST)
+			return pulverize_limb(wounding_type)
+		//VENUS ADDITION END
 		var/datum/wound/loss/dismembering = new
 		return dismembering.apply_dismember(src, wounding_type)
 

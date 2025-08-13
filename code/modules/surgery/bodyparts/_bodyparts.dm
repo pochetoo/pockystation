@@ -573,6 +573,15 @@
 				if(wounding_type == WOUND_PIERCE && !easy_dismember)
 					wounding_dmg *= 0.75 // piercing weapons pass along 75% of their wounding damage to the bone since it's more concentrated
 				wounding_type = WOUND_BLUNT
+			//VENUS ADDITION START: mirror of the above for blunt progression -- once bone is already mangled but exterior skin is not, repeated blunt trauma can start tearing exterior tissue
+			// This allows pure blunt to naturally reach dismember (pulverize) without needing an initial sharp hit. We convert some blunt force into a low-efficiency slashing-style wound.
+			else if(has_exterior && has_interior && (mangled_state & BODYPART_MANGLED_INTERIOR) && !(mangled_state & BODYPART_MANGLED_EXTERIOR) && wounding_type == WOUND_BLUNT && !sharpness)
+				// Apply a penalty since blunt is inefficient at creating surface lacerations; easydismember trait skips the penalty similar to sharp->bone logic.
+				if(!easy_dismember)
+					wounding_dmg *= 0.6
+				// Recast as a slashing wound so check_wounding() can roll exterior lacerations (which carry MANGLES_EXTERIOR)
+				wounding_type = WOUND_SLASH
+			//VENUS ADDITION END
 		if ((dismemberable_by_wound() || dismemberable_by_total_damage()) && try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus))
 			return
 		// now we have our wounding_type and are ready to carry on with wounds and dealing the actual damage
