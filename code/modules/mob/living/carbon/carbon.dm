@@ -741,32 +741,20 @@
 		else if(health > HEALTH_THRESHOLD_NEARDEATH)
 			REMOVE_TRAIT(src, TRAIT_SIXTHSENSE, "near-death")
 
-// VENUS ADDITION START: helper for core crit logic in base carbon/update_stat
-/mob/living/carbon/proc/get_core_health()
-	var/brute_core = 0
-	var/burn_core = 0
-	for(var/obj/item/bodypart/B as anything in bodyparts)
-		if(B.body_zone == BODY_ZONE_HEAD || B.body_zone == BODY_ZONE_CHEST)
-			brute_core += B.brute_dam
-			burn_core += B.burn_dam
-	return maxHealth - getOxyLoss() - getToxLoss() - brute_core - burn_core
-// VENUS ADDITION END
-
 /mob/living/carbon/update_stat()
 	if(HAS_TRAIT(src, TRAIT_GODMODE))
 		return
-	var/effective_health = get_core_health() //VENUS ADDITION: helper for core crit logic
 	if(stat != DEAD)
-		if(effective_health <= HEALTH_THRESHOLD_DEAD && !HAS_TRAIT(src, TRAIT_NODEATH)) //VENUS EDIT - health -> effective_health
+		if(health <= HEALTH_THRESHOLD_DEAD && !HAS_TRAIT(src, TRAIT_NODEATH))
 			death()
 			return
 		if(HAS_TRAIT_FROM(src, TRAIT_DISSECTED, AUTOPSY_TRAIT))
 			REMOVE_TRAIT(src, TRAIT_DISSECTED, AUTOPSY_TRAIT)
-		if(effective_health <= hardcrit_threshold && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)) //VENUS EDIT - health -> effective_health
+		if(health <= hardcrit_threshold && !HAS_TRAIT(src, TRAIT_NOHARDCRIT))
 			set_stat(HARD_CRIT)
 		else if(HAS_TRAIT(src, TRAIT_KNOCKEDOUT))
 			set_stat(UNCONSCIOUS)
-		else if(effective_health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT)) //VENUS EDIT - health -> effective_health
+		else if(health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT))
 			set_stat(SOFT_CRIT)
 		else
 			set_stat(CONSCIOUS)
