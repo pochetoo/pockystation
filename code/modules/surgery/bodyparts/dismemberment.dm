@@ -81,11 +81,11 @@
 	limb_owner.add_mood_event("dismembered_[body_zone]", /datum/mood_event/dismembered, src)
 	limb_owner.add_mob_memory(/datum/memory/was_dismembered, lost_limb = src)
 
-	if (wounding_type)
+	if(wounding_type)
 		LAZYSET(limb_owner.body_zone_dismembered_by, body_zone, wounding_type)
 
-	if (can_bleed())
-		limb_owner.bleed(rand(20, 40)) // VENUS EDIT (balanced initial bleed)
+	if(can_bleed())
+		limb_owner.bleed(rand(20, 40))
 
 	// We drop then (usually) immediately delete the limb to avoid reuse
 	drop_limb(dismembered = TRUE)
@@ -97,8 +97,8 @@
 	if(!QDELETED(src))
 		qdel(src)
 	if(T)
-		new /obj/effect/decal/cleanable/blood/gibs(T, null, GET_ATOM_BLOOD_DNA(limb_owner))
-	if (can_bleed())
+		var/obj/effect/decal/cleanable/blood/gibs/G = new /obj/effect/decal/cleanable/blood/gibs(T, limb_owner.get_static_viruses(), limb_owner.get_blood_dna_list())
+	if(can_bleed())
 		limb_owner.bleed(rand(20, 40))
 
 	return TRUE
