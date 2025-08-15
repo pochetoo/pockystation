@@ -63,7 +63,7 @@
  * - Spawns extra blood splatter & gibs
  * - Does NOT leave behind a retrievable limb item (the limb is qdel'd)
  */
-/obj/item/bodypart/proc/pulverize_limb(wounding_type = WOUND_BLUNT) // VENUS ADDITION FEATURE
+/obj/item/bodypart/proc/pulverize_limb(wounding_type = WOUND_BLUNT, attack_direction)
 	if(!owner || (bodypart_flags & BODYPART_UNREMOVABLE))
 		return FALSE
 	var/mob/living/carbon/limb_owner = owner
@@ -98,6 +98,7 @@
 		qdel(src)
 	if(T)
 		var/obj/effect/decal/cleanable/blood/gibs/G = new /obj/effect/decal/cleanable/blood/gibs(T, limb_owner.get_static_viruses(), limb_owner.get_blood_dna_list())
+		G.streak(attack_direction)
 	if(can_bleed())
 		limb_owner.bleed(rand(20, 40))
 
@@ -229,7 +230,7 @@
  * * wound_bonus: Not actually used right now, but maybe someday
  * * exposed_wound_bonus: ditto above
  */
-/obj/item/bodypart/proc/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus)
+/obj/item/bodypart/proc/try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus, attack_direction) //VENUS ADDITION: Added attack_direction
 	if (!can_dismember())
 		return
 
@@ -245,7 +246,7 @@
 	if(prob(base_chance))
 		//VENUS ADDITION START: Blunt limb gibbing
 		if(wounding_type == WOUND_BLUNT && body_zone != BODY_ZONE_CHEST)
-			return pulverize_limb(wounding_type)
+			return pulverize_limb(wounding_type, attack_direction)
 		//VENUS ADDITION END
 		var/datum/wound/loss/dismembering = new
 		return dismembering.apply_dismember(src, wounding_type)

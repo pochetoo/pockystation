@@ -582,7 +582,7 @@
 				// Recast as a slashing wound so check_wounding() can roll exterior lacerations (which carry MANGLES_EXTERIOR)
 				wounding_type = WOUND_SLASH
 			//VENUS ADDITION END
-		if ((dismemberable_by_wound() || dismemberable_by_total_damage()) && try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus))
+		if ((dismemberable_by_wound() || dismemberable_by_total_damage()) && try_dismember(wounding_type, wounding_dmg, wound_bonus, exposed_wound_bonus, attack_direction)) //VENUS EDIT: Added attack_direction
 			return
 		// now we have our wounding_type and are ready to carry on with wounds and dealing the actual damage
 		if(wounding_dmg >= WOUND_MINIMUM_DAMAGE && wound_bonus != CANT_WOUND)
