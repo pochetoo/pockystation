@@ -1,10 +1,12 @@
-// SPLURT STATION EDIT: START
+// SPLURT STATION EDIT: START - VENUS REMOVAL FOR NOW
+/*
 #define US_EAST_RELAY_ADDR "byond://us-east.splurt.space:42069"
 #define US_WEST_RELAY_ADDR "byond://us-west.splurt.space:42069"
 #define SYDNEY_RELAY_ADDR "byond://sydney.splurt.space:42069"
 #define SINGAPORE_RELAY_ADDR "byond://singapore.splurt.space:42069"
 #define EU_RELAY_ADDR "byond://germany.splurt.space:42069"
 #define NO_RELAY_ADDR "byond://play.splurt.space:42069"
+*/
 // SPLURT STATION EDIT: END
 
 #define US_EAST_RELAY "Connect to US-East (Virginia)"
