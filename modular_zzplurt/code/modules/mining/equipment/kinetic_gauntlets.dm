@@ -195,8 +195,10 @@
 
 	/// Linked gauntlets object
 	var/obj/item/clothing/gloves/kinetic_gauntlets/linked_gauntlets
-	/// Next attack time
+	/// Next attack time for this specific gauntlet
 	var/next_attack = 0
+	/// Is this the left hand?
+	var/is_left_hand = FALSE
 
 /obj/item/kinetic_gauntlet/Initialize(mapload)
 	. = ..()
@@ -287,6 +289,7 @@
 
 /obj/item/kinetic_gauntlet/left
 	icon_state = "kgauntlet_l"
+	is_left_hand = TRUE
 	actions_types = list(/datum/action/item_action/toggle_light)
 
 /obj/item/kinetic_gauntlet/left/Initialize(mapload)
@@ -328,8 +331,8 @@
 /datum/action/item_action/extend_gauntlets
 	name = "Extend Gauntlets"
 	desc = "Deploy or retract the kinetic gauntlet fists."
-	button_icon = 'modular_skyrat/master_files/icons/mob/actions/actions_items.dmi'
-	button_icon_state = "gauntlets"
+	button_icon = 'modular_zzplurt/icons/obj/mining.dmi'
+	button_icon_state = "kgauntlets"
 
 /datum/movespeed_modifier/equipping_gauntlets
 	multiplicative_slowdown = 0.8

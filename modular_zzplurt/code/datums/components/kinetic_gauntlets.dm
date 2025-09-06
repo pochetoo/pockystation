@@ -22,6 +22,12 @@
 	var/datum/callback/attack_check
 	/// Callback to check if we can detonate marks
 	var/datum/callback/detonate_check
+	/// Last target we hit
+	var/mob/living/last_target
+	/// Time of last hit
+	var/last_hit_time = 0
+	/// Max time between hits to detonate
+	var/hit_window = 1.5 SECONDS
 
 /datum/component/kinetic_gauntlets/Initialize(detonation_damage = 50, backstab_bonus = 30, recharge_time = 1.5 SECONDS, datum/callback/attack_check = null, datum/callback/detonate_check = null)
 	if(!isitem(parent))
@@ -44,6 +50,7 @@
 	QDEL_LIST(trophies)
 	attack_check = null
 	detonate_check = null
+	last_target = null
 	return ..()
 
 /datum/component/kinetic_gauntlets/proc/on_examine(obj/item/source, mob/user, list/examine_list)
@@ -105,31 +112,34 @@
 	for(var/obj/item/crusher_trophy/trophy as anything in trophies)
 		trophy.on_melee_hit(target, user)
 
+	var/datum/status_effect/crusher_mark/mark = target.has_status_effect(/datum/status_effect/crusher_mark)
+	if(mark && detonate_check?.Invoke(user))
+		var/current_time = world.time
+		if(last_target == target && (current_time - last_hit_time) <= hit_window)
+			var/boosted_mark = mark.boosted
+			if(target.remove_status_effect(mark))
+				detonate_mark(target, user, boosted_mark)
+			last_target = null
+			last_hit_time = 0
+		else
+			last_target = target
+			last_hit_time = current_time
+
 /datum/component/kinetic_gauntlets/proc/on_afterattack(obj/item/source, mob/living/target, mob/living/user, click_parameters)
 	SIGNAL_HANDLER
-
-	if(!isliving(target))
-		return
-
-	if(detonate_check && !detonate_check.Invoke(user))
-		return
-
-	var/datum/status_effect/crusher_mark/mark = target.has_status_effect(/datum/status_effect/crusher_mark)
-	if(!mark)
-		return
-
-	var/boosted_mark = mark.boosted
-	if(!target.remove_status_effect(mark))
-		return
-
-	detonate_mark(target, user, boosted_mark)
+	return
 
 /datum/component/kinetic_gauntlets/proc/fire_kinetic_blast(atom/target, mob/living/user, list/modifiers)
+	if(!charged)
+		return FALSE
+
 	var/turf/proj_turf = user.loc
 	if(!isturf(proj_turf))
-		return
+		return FALSE
 
 	var/obj/projectile/destabilizer/projectile = new(proj_turf)
+	projectile.icon = 'icons/obj/weapons/guns/projectiles.dmi'
+	projectile.icon_state = "pulse1"
 
 	for(var/obj/item/crusher_trophy/trophy as anything in trophies)
 		trophy.on_projectile_fire(projectile, user)
@@ -145,6 +155,7 @@
 	var/atom/parent_atom = parent
 	parent_atom.update_appearance()
 	attempt_recharge()
+	return TRUE
 
 /datum/component/kinetic_gauntlets/proc/attempt_recharge(custom_time)
 	if(!custom_time)
@@ -191,3 +202,12 @@
 	SEND_SIGNAL(user, COMSIG_LIVING_CRUSHER_DETONATE, target, parent, backstabbed)
 
 	target.apply_damage(combined_damage, BRUTE, blocked = def_check)
+
+	var/target_turf = get_turf(target)
+	var/user_turf = get_turf(user)
+	if(target_turf && user_turf && !target.anchored)
+		var/dir_to_target = get_dir(user_turf, target_turf)
+		var/throwtarget = get_edge_target_turf(target_turf, dir_to_target)
+		target.throw_at(throwtarget, 2, 1)
+		var/throwtarget_user = get_edge_target_turf(user_turf, REVERSE_DIR(dir_to_target))
+		user.throw_at(throwtarget_user, 1, 1)
