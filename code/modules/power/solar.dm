@@ -47,14 +47,6 @@
 	connect_to_network()
 	RegisterSignal(SSsun, COMSIG_SUN_MOVED, PROC_REF(queue_update_solar_exposure))
 
-	//VENUS ADDITION START: Buff Default station solar panels
-	if(mapload && is_station_level(z))
-		material_type = /datum/material/alloy/titaniumglass
-		power_tier = 2
-		panel.icon_state = "solar_panel_[material_type.name]"
-		panel_edge.icon_state = "solar_panel_[material_type.name]_edge"
-	//VENUS ADDITION END
-
 //VENUS ADDITION START: Examine text for solar panels
 /obj/machinery/power/solar/examine()
 	. = ..()
