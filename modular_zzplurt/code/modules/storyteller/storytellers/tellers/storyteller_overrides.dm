@@ -1,13 +1,15 @@
-//VENUS REMOVAL START
-/*
 /datum/storyteller/chill
 	votable = FALSE
 
 /datum/storyteller/fragile
 	votable = FALSE
 
+//VENUS REMOVAL START: Make default votable
+/*
 /datum/storyteller/default
 	votable = FALSE
+*/
+//VENUS REMOVAL END
 
 /datum/storyteller/bomb
 	votable = FALSE
@@ -20,5 +22,3 @@
 
 /datum/storyteller/enemy
 	votable = FALSE
-*/
-//VENUS REMOVAL END

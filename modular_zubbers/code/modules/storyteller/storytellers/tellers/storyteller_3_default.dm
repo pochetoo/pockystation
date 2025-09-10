@@ -1,6 +1,7 @@
+//VENUS EDIT: Renamed from Default Andy to Balanced Barry
 /datum/storyteller/default
-	name = "Default Andy (Medium Chaos)"
-	desc = "Default Andy is the default Storyteller, and the comparison point for every other Storyteller. \
+	name = "Balanced Barry (Medium Chaos)"
+	desc = "Balanced Barry is the default Storyteller, and the comparison point for every other Storyteller. \
 	More frequent events than the Chill or the Fragile, but less frequent events than The Gamer or the Clown. Best for an average, varied experience."
 	welcome_text = "If I chopped you up in a meat grinder..."
 	antag_divisor = 8
