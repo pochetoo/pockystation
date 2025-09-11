@@ -876,7 +876,7 @@ trait_name = "Station"
 map_files = ["boxstation_arrivals.dmm"]
 directory = "_maps/venus/automapper/templates/BoxStation/"
 required_map = "BoxStation.dmm"
-coordinates = [47, 136, 1]
+coordinates = [42, 114, 1]
 trait_name = "Station"
 
 # Kilostation Arrivals (FOR INTERLINK REMOVAL, positions docking port to work with kilostation arrival shuttle and not interlink ferry)
