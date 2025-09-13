@@ -21,7 +21,7 @@ type Department = {
 export const DEPARTMENT2COLOR: Record<string, Department> = {
   cargo: {
     color: 'brown',
-    trims: ['Bitrunner', 'Cargo Technician', 'Shaft Miner', 'Quartermaster'],
+    trims: ['Bitrunner', 'Cargo Technician', 'Shaft Miner', 'Quartermaster', 'Explorer'], //VENUS ADDITION: Added 'Explorer' - IRIS PORT (Explorer Job)
   },
   command: {
     color: 'blue',

@@ -30,6 +30,9 @@
 		JOB_CUSTOMS_AGENT,
 		JOB_ENGINEERING_GUARD,
 		JOB_SCIENCE_GUARD,
+		//VENUS ADDITION START - IRIS PORT (Explorer Job)
+		JOB_EXPLORER,
+		//VENUS ADDITION END
 		)
 
 	/// Restricted roles from the antag roll

@@ -32,6 +32,7 @@ const BASEICONS = {
   'Cyber Police': 'qrcode',
   Cyborg: 'robot',
   Detective: 'user-secret',
+  Explorer: 'user-astronaut', // VENUS ADDITION - IRIS PORT (Explorer Job)
   Geneticist: 'dna',
   'Head of Personnel': 'dog',
   'Head of Security': 'user-shield',
