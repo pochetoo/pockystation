@@ -460,6 +460,10 @@
 		genital_list += list("Penis Girth", "Penis Length", "Penis Sheath", "Penis Taur Mode")
 	if(alterer.get_organ_slot(ORGAN_SLOT_TESTICLES))
 		genital_list += list("Testicles Size")
+	//VENUS ADDITION START
+	if(alterer.get_organ_slot(ORGAN_SLOT_BUTT))
+		genital_list += list("Butt Size")
+	//VENUS ADDITION END
 	if(!length(genital_list))
 		alterer.balloon_alert(alterer, "no genitals!")
 
@@ -551,6 +555,21 @@
 			if(new_size)
 				alterer.dna.features["balls_size"] = avocados.balls_description_to_size(new_size)
 				avocados.set_size(alterer.dna.features["balls_size"])
+		//VENUS ADDITION START
+		if("Butt Size")
+			var/obj/item/organ/genital/butt/mob_butt = alterer.get_organ_slot(ORGAN_SLOT_BUTT)
+			var/new_butt_size = tgui_input_number(
+				alterer,
+				"Choose your character's butt size:\n([BUTT_MIN_SIZE]-[BUTT_MAX_SIZE])",
+				"DNA Alteration",
+				max_value = BUTT_MAX_SIZE,
+				min_value = BUTT_MIN_SIZE,
+			)
+			if(!new_butt_size)
+				return
+			alterer.dna.features["butt_size"] = new_butt_size
+			mob_butt.set_size(alterer.dna.features["butt_size"])
+		//VENUS ADDITION END
 
 /datum/species/jelly/on_bloodsucker_gain(mob/living/carbon/human/target)
 	humanize_organs(target)
