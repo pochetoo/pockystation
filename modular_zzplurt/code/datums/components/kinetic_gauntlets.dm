@@ -106,11 +106,14 @@
 	if(attack_check && !attack_check.Invoke(user))
 		return COMPONENT_CANCEL_ATTACK_CHAIN
 
-	if(!target.has_status_effect(/datum/status_effect/crusher_damage))
-		target.apply_status_effect(/datum/status_effect/crusher_damage)
+	var/datum/status_effect/crusher_damage/damage_effect = target.has_status_effect(/datum/status_effect/crusher_damage) || target.apply_status_effect(/datum/status_effect/crusher_damage)
+	var/target_health_before = target.health
 
 	for(var/obj/item/crusher_trophy/trophy as anything in trophies)
 		trophy.on_melee_hit(target, user)
+
+	if(!QDELETED(damage_effect) && !QDELETED(target))
+		damage_effect.total_damage += source.force + (target_health_before - target.health)
 
 	var/datum/status_effect/crusher_mark/mark = target.has_status_effect(/datum/status_effect/crusher_mark)
 	if(mark && detonate_check?.Invoke(user))
