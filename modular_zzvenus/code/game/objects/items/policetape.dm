@@ -65,14 +65,8 @@ var/global/list/tape_roll_applications = list()
 	register_context()
 
 /obj/item/tape_barrier/add_context(atom/source, list/context, obj/item/held_item, mob/user)
-	// LMB: lift (help intent). RMB: break (vanilla alt-click). Also supports harm intent breaking.
-	context[SCREENTIP_CONTEXT_LMB] = "Lift temporarily (Help intent)"
-	context[SCREENTIP_CONTEXT_RMB] = "Break (RMB or Harm intent)"
+	context[SCREENTIP_CONTEXT_LMB] = "Lift temporarily (Help intent) - Break (Harm intent)"
 	return CONTEXTUAL_SCREENTIP_SET
-
-/obj/item/tape_barrier/attack_hand_secondary(mob/user, list/modifiers)
-	breaktape(user)
-	return TRUE
 
 /obj/item/tape_barrier/update_icon()
 	. = ..()
@@ -346,8 +340,8 @@ var/global/list/tape_roll_applications = list()
 
 /obj/item/taperoll/proc/place_tape_on_airlock(obj/machinery/door/airlock/A, mob/living/user)
 	var/turf/T = get_turf(A)
-	if(locate(/obj/item/tape_barrier/bureaucracy) in T)
-		to_chat(user, span_warning("There is already tape on the airlock!"))
+	if(locate(/obj/item/tape_barrier) in T)
+		to_chat(user, span_warning("There is already tape on the [A.name]!"))
 		return FALSE
 	if(user)
 		if(!consume_tape())
