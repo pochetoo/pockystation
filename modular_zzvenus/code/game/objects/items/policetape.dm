@@ -18,10 +18,10 @@
 	if(uses_remaining <= 0)
 		return FALSE
 	uses_remaining = max(0, uses_remaining - count)
+	var/now_empty = (uses_remaining <= 0)
 	update_appearance()
-	if(uses_remaining <= 0)
+	if(now_empty)
 		qdel(src)
-		return FALSE
 	return TRUE
 
 /obj/item/taperoll/Initialize()
