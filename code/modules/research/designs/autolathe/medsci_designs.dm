@@ -65,7 +65,7 @@
 	name = "Medical Tape Roll"
 	id = "med_tape"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT * 2)
+	materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT)
 	build_path = /obj/item/taperoll/medical
 	category = list(
 		RND_CATEGORY_INITIAL,
@@ -77,7 +77,7 @@
 	name = "Research Tape Roll"
 	id = "sci_tape"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT * 2)
+	materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT)
 	build_path = /obj/item/taperoll/research
 	category = list(
 		RND_CATEGORY_INITIAL,

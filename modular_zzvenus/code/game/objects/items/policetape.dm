@@ -10,8 +10,8 @@
 	var/icon_base = "tape"
 
 	var/apply_tape = FALSE
-	var/uses_remaining = 50
-	var/max_uses = 50
+	var/uses_remaining = 30
+	var/max_uses = 30
 	custom_materials = list(/datum/material/plastic = 1)
 
 /obj/item/taperoll/proc/consume_tape(count = 1)

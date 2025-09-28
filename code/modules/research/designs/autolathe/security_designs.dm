@@ -100,7 +100,7 @@
 	name = "Police Tape Roll"
 	id = "sec_tape"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT * 2)
+	materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT)
 	build_path = /obj/item/taperoll/police
 	category = list(
 		RND_CATEGORY_INITIAL,
