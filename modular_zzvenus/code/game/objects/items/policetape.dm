@@ -372,32 +372,45 @@ var/global/list/tape_roll_applications = list()
 		name = "crumpled [name]"
 
 /obj/item/tape_barrier/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if(!lifted && ismob(mover))
-		var/mob/living/L = mover
-		if(L.move_intent != MOVE_INTENT_WALK && !crumpled)
-			return FALSE
+	if(!lifted && !crumpled && ismob(mover))
+		return FALSE
 	return ..(mover)
 
 /obj/item/tape_barrier/Bumped(atom/movable/AM)
 	. = ..()
 	if(!lifted && ismob(AM))
 		var/mob/living/L = AM
-		// If not allowed and on harm intent, crumple (also leave forensics)
-		if(!allowed(L) && L.combat_mode != INTENT_HELP)
+		// On harm intent, crumple (also leave forensics). Non-harm (help/disarm/grab or combat off) will not crumple.
+		var/is_harm = FALSE
+		if(isnum(L.combat_mode))
+			is_harm = (L.combat_mode == INTENT_HARM)
+		else
+			is_harm = !!L.combat_mode
+		if(is_harm)
 			add_fingerprint(L)
 			crumple()
 
 /obj/item/tape_barrier/use_tool(atom/target, mob/living/user, delay, amount=0, volume=0, datum/callback/extra_checks)
 	if (isliving(user))
 		var/mob/living/L = user
-		if (L.combat_mode == INTENT_HELP)
+		var/is_harm = FALSE
+		if(isnum(L.combat_mode))
+			is_harm = (L.combat_mode == INTENT_HARM)
+		else
+			is_harm = !!L.combat_mode
+		if(!is_harm)
 			return ..()
 	breaktape(user)
 
 /obj/item/tape_barrier/attack_hand(mob/user as mob)
 	if (isliving(user))
 		var/mob/living/L = user
-		if (L.combat_mode == INTENT_HELP && src.allowed(user))
+		var/is_harm = FALSE
+		if(isnum(L.combat_mode))
+			is_harm = (L.combat_mode == INTENT_HARM)
+		else
+			is_harm = !!L.combat_mode
+		if(!is_harm)
 			user.visible_message(span_notice("\the [user] lifts \the [src], allowing passage."), span_notice("You lift \the [src], allowing passage."))
 			for(var/obj/item/tape_barrier/T in gettapeline())
 				T.lift(10 SECONDS)
