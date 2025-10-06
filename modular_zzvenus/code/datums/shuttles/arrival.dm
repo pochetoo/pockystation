@@ -10,5 +10,7 @@
 	name = "arrival shuttle (Venus Ferry)"
 
 //Kilo arrivals shuttle, longer so it fits both docking ports
-/datum/map_template/shuttle/arrival/kilo
+/datum/map_template/shuttle/arrival/venus_kilo
+	prefix = "_maps/shuttles/zzvenus/"
 	suffix = "kilo_venus"
+	name = "arrival shuttle (Kilo)"
