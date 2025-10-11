@@ -11,7 +11,7 @@
 
 /obj/item/food/protein_bar/one
 	name = "protein bar"
-	desc = "The most fake looking protein bar you have ever laid eyes on, covered in substitution chocolate. The powder used to make these is a substitute of a substitute of whey substitute."
+	desc = "The fakest looking protein bar you have ever laid eyes on, covered in substitution chocolate. The powder used to make these is a substitute of a substitute of whey substitute."
 	greyscale_colors = "#f37d43" //default colors
 	tastes = list("chalk" = 1, "cocoa" = 1)
 
@@ -35,19 +35,19 @@
 
 /obj/item/food/protein_bar/five
 	name = "dark chocolate protein bar"
-	desc = "The dark chocolate flavor helps it out a bit, but its still a cheap protein bar."
+	desc = "The dark chocolate flavor helps it out a bit, but it's still a cheap protein bar."
 	greyscale_colors = "#5a3b1d"
 	tastes = list("bitter dark chocolate" = 1)
 
 /obj/item/food/protein_bar/six
 	name = "milk chocolate protein bar"
-	desc = "A nice milky addition to a otherwise bland protein taste."
+	desc = "A nice milky addition to an otherwise bland protein taste."
 	greyscale_colors = "#efc296"
 	tastes = list("off flavor milk chocolate" = 1)
 
 /obj/item/food/protein_bar/seven
 	name = "raspberry lime protein bar"
-	desc = "A flavored protein bar, some might say a bit too strongly flavored for their tastes."
+	desc = "A flavored protein bar, some might say a bit too strong for their tastes."
 	greyscale_colors = "#ff0066"
 	tastes = list("sour raspberry and lime" = 1)
 
