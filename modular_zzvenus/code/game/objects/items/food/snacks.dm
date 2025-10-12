@@ -7,6 +7,7 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment/protein = 10)
 	bite_consumption = 3
 	greyscale_config = /datum/greyscale_config/protein_bar
+	post_init_icon_state = "protein_bar"
 	foodtypes = GRAIN
 
 /obj/item/food/protein_bar/one

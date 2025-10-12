@@ -10483,6 +10483,7 @@
 #include "modular_zzplurt\code\modules\vetted\vetted.dm"
 #include "modular_zzplurt\code\modules\wiremod\core\integrated_circuit.dm"
 #include "modular_zzplurt\maps\offstation\seedvault.dm"
+#include "modular_zzvenus\code\controllers\subsystem\persistence\cleanables.dm"
 #include "modular_zzvenus\code\datums\components\hotel_item.dm"
 #include "modular_zzvenus\code\datums\quirks\noitem_quirks.dm"
 #include "modular_zzvenus\code\datums\shuttles\arrival.dm"

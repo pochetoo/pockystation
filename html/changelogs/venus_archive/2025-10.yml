@@ -4,3 +4,6 @@
 2025-10-09:
   Goku:
   - rscadd: Added 9 flavors of protein bars, and added them to the snack vending machine and the NT sustenance vendors.
+2025-10-12:
+  Goku:
+  - rscadd: Persistent cleanables and trash system! Blood, graffiti, and trash now persist across rounds. Janitors can examine items to see how long they've been there and get disposal hints.
