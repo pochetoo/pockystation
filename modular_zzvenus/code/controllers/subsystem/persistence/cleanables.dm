@@ -1,5 +1,9 @@
+/// Base directory for persistent data
+#define PERSISTENCE_BASE_DIRECTORY "data/zzvenus_persistence"
 /// Directory where persistent cleanables are saved
-#define CLEANABLES_DIRECTORY "data/persistent_cleanables"
+#define CLEANABLES_DIRECTORY "[PERSISTENCE_BASE_DIRECTORY]/cleanables"
+/// Directory where persistent trash is saved
+#define TRASH_DIRECTORY "[PERSISTENCE_BASE_DIRECTORY]/trash"
 /// Maximum number of cleanables to persist across the entire station
 #define MAX_PERSISTENT_CLEANABLES 500
 /// Maximum number of cleanables allowed per tile
@@ -8,6 +12,8 @@
 #define MAX_PERSISTENT_TRASH 200
 /// Maximum number of trash items allowed per tile
 #define MAX_TRASH_PER_TILE 3
+/// Maximum number of limbs/organs allowed per tile
+#define MAX_LIMBS_ORGANS_PER_TILE 3
 
 /// Cleanable types that shouldn't be persisted (ephemeral or can't be reconstructed)
 GLOBAL_LIST_INIT(non_persistent_cleanables, list(
@@ -269,6 +275,7 @@ GLOBAL_LIST_INIT(non_persistent_cleanables, list(
 /datum/controller/subsystem/persistence/proc/save_trash()
 	var/list/trash_to_save = list()
 	var/list/trash_by_tile = list() // Track trash per tile for cap
+	var/list/limbs_organs_by_tile = list() // Track limbs/organs per tile for their own cap
 
 	// Get all station turfs directly (excluding maintenance)
 	var/list/station_turfs = get_area_turfs(/area/station, subtypes=TRUE)
@@ -316,6 +323,79 @@ GLOBAL_LIST_INIT(non_persistent_cleanables, list(
 			if(length(trash_to_save) >= MAX_PERSISTENT_TRASH)
 				break
 
+		// Also persist limbs on this turf
+		for(var/obj/item/bodypart/limb in turf_loc.contents)
+			if(limb.maploaded)
+				continue
+
+			// Skip heads - we don't want to persist these
+			if(istype(limb, /obj/item/bodypart/head))
+				continue
+			// Verify it's on a station z-level
+			if(!is_station_level(turf_loc.z))
+				continue
+
+			var/tile_key = "[turf_loc.x],[turf_loc.y],[turf_loc.z]"
+			var/tile_saved_count = limbs_organs_by_tile[tile_key] || 0
+			if(tile_saved_count >= MAX_LIMBS_ORGANS_PER_TILE)
+				continue
+
+			var/list/item_data = list(
+				"type" = limb.type,
+				"x" = turf_loc.x,
+				"y" = turf_loc.y,
+				"z" = turf_loc.z,
+				"icon_state" = limb.icon_state,
+				"dir" = limb.dir,
+				"name" = (limb.name != initial(limb.name)) ? limb.name : null,
+				"pixel_x" = limb.pixel_x,
+				"pixel_y" = limb.pixel_y,
+				"rounds_persisted" = limb.rounds_persisted + 1
+			)
+
+			trash_to_save += list(item_data)
+			limbs_organs_by_tile[tile_key] = tile_saved_count + 1
+
+			if(length(trash_to_save) >= MAX_PERSISTENT_TRASH)
+				break
+
+		// Also persist organs on this turf
+		for(var/obj/item/organ/organ in turf_loc.contents)
+			if(organ.maploaded)
+				continue
+
+			// Skip genitals - we don't want to persist these
+			if(istype(organ, /obj/item/organ/genital))
+				continue
+
+			// Verify it's on a station z-level
+			if(!is_station_level(turf_loc.z))
+				continue
+
+			var/tile_key = "[turf_loc.x],[turf_loc.y],[turf_loc.z]"
+			var/tile_saved_count = limbs_organs_by_tile[tile_key] || 0
+			if(tile_saved_count >= MAX_LIMBS_ORGANS_PER_TILE)
+				continue
+
+			var/list/organ_item_data = list(
+				"type" = organ.type,
+				"x" = turf_loc.x,
+				"y" = turf_loc.y,
+				"z" = turf_loc.z,
+				"icon_state" = organ.icon_state,
+				"dir" = organ.dir,
+				"name" = (organ.name != initial(organ.name)) ? organ.name : null,
+				"pixel_x" = organ.pixel_x,
+				"pixel_y" = organ.pixel_y,
+				"rounds_persisted" = organ.rounds_persisted + 1
+			)
+
+			trash_to_save += list(organ_item_data)
+			limbs_organs_by_tile[tile_key] = tile_saved_count + 1
+
+			if(length(trash_to_save) >= MAX_PERSISTENT_TRASH)
+				break
+
 		// Break out of turf loop if cap reached
 		if(length(trash_to_save) >= MAX_PERSISTENT_TRASH)
 			break
@@ -334,7 +414,7 @@ GLOBAL_LIST_INIT(non_persistent_cleanables, list(
 	// Write to file
 	var/map_name = SSmapping.current_map?.map_name || "unknown"
 	var/sanitized_map_name = replacetext(map_name, " ", "_")
-	var/json_file = file("[CLEANABLES_DIRECTORY]/[sanitized_map_name]_trash.json")
+	var/json_file = file("[TRASH_DIRECTORY]/[sanitized_map_name].json")
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(json_data))
 
@@ -345,7 +425,7 @@ GLOBAL_LIST_INIT(non_persistent_cleanables, list(
 		return
 
 	var/sanitized_map_name = replacetext(map_name, " ", "_")
-	var/json_file = file("[CLEANABLES_DIRECTORY]/[sanitized_map_name]_trash.json")
+	var/json_file = file("[TRASH_DIRECTORY]/[sanitized_map_name].json")
 	if(!fexists(json_file))
 		return // First round on this map, no data to load
 
@@ -365,6 +445,7 @@ GLOBAL_LIST_INIT(non_persistent_cleanables, list(
 
 	var/loaded_count = 0
 	var/list/trash_per_tile = list() // Track spawned trash per tile
+	var/list/limbs_organs_per_tile = list() // Track spawned limbs/organs per tile
 
 	for(var/list/trash_data in trash_list)
 		// Early cap check to avoid unnecessary processing
@@ -375,8 +456,8 @@ GLOBAL_LIST_INIT(non_persistent_cleanables, list(
 		if(!islist(trash_data))
 			continue
 
-		var/trash_type = text2path(trash_data["type"])
-		if(!ispath(trash_type, /obj/item/trash))
+		var/item_type = text2path(trash_data["type"])
+		if(!(ispath(item_type, /obj/item/trash) || ispath(item_type, /obj/item/bodypart) || ispath(item_type, /obj/item/organ)))
 			continue
 
 		// Validate and extract coordinates
@@ -403,43 +484,78 @@ GLOBAL_LIST_INIT(non_persistent_cleanables, list(
 
 		// Check per-tile cap
 		var/tile_key = "[x],[y],[z]"
-		var/tile_count = trash_per_tile[tile_key] || 0
-		if(tile_count >= MAX_TRASH_PER_TILE)
+		if(ispath(item_type, /obj/item/trash))
+			var/tile_trash_count = trash_per_tile[tile_key] || 0
+			if(tile_trash_count >= MAX_TRASH_PER_TILE)
+				continue
+		else
+			var/tile_lo_count = limbs_organs_per_tile[tile_key] || 0
+			if(tile_lo_count >= MAX_LIMBS_ORGANS_PER_TILE)
+				continue
+
+		// Spawn the item (trash/limb/organ)
+		var/obj/item/new_item = new item_type(target_turf)
+		if(!new_item)
 			continue
 
-		// Spawn the trash item
-		var/obj/item/trash/new_trash = new trash_type(target_turf)
-		if(!new_trash)
-			continue
-
-		trash_per_tile[tile_key] = tile_count + 1
+		if(ispath(item_type, /obj/item/trash))
+			var/tile_trash_count = trash_per_tile[tile_key] || 0
+			trash_per_tile[tile_key] = tile_trash_count + 1
+		else
+			var/tile_lo_count = limbs_organs_per_tile[tile_key] || 0
+			limbs_organs_per_tile[tile_key] = tile_lo_count + 1
 
 		// Apply saved visual properties
 		if(trash_data["icon_state"])
-			new_trash.icon_state = trash_data["icon_state"]
+			new_item.icon_state = trash_data["icon_state"]
 		if(trash_data["dir"])
-			new_trash.dir = trash_data["dir"]
+			new_item.dir = trash_data["dir"]
 		if(trash_data["name"])
-			new_trash.name = trash_data["name"]
+			new_item.name = trash_data["name"]
 
 		// Restore pixel offsets
 		if(!isnull(trash_data["pixel_x"]))
-			new_trash.pixel_x = trash_data["pixel_x"]
+			new_item.pixel_x = trash_data["pixel_x"]
 		if(!isnull(trash_data["pixel_y"]))
-			new_trash.pixel_y = trash_data["pixel_y"]
+			new_item.pixel_y = trash_data["pixel_y"]
 
 		// Restore rounds persisted for janitor examine
 		if(!isnull(trash_data["rounds_persisted"]))
-			new_trash.rounds_persisted = trash_data["rounds_persisted"]
+			if(istype(new_item, /obj/item/trash))
+				var/obj/item/trash/trash_item = new_item
+				trash_item.rounds_persisted = trash_data["rounds_persisted"]
+			else if(istype(new_item, /obj/item/bodypart))
+				var/obj/item/bodypart/limb = new_item
+				limb.rounds_persisted = trash_data["rounds_persisted"]
+			else if(istype(new_item, /obj/item/organ))
+				var/obj/item/organ/organ = new_item
+				organ.rounds_persisted = trash_data["rounds_persisted"]
 
+		// If this is a limb or organ, make it decayed/unusable for medical purposes
+		if(istype(new_item, /obj/item/bodypart))
+			var/obj/item/bodypart/limb = new_item
+			limb.brute_dam = limb.max_damage
+			limb.burn_dam = limb.max_damage
+			limb.update_disabled()
+			limb.name = "decayed [limb.name]"
+			limb.add_atom_colour(COLOR_SERVICE_LIME, FIXED_COLOUR_PRIORITY) // Green hue
+		else if(istype(new_item, /obj/item/organ))
+			var/obj/item/organ/organ = new_item
+			organ.set_organ_damage(organ.maxHealth)
+			organ.organ_flags |= ORGAN_FAILING
+			organ.useable = FALSE
+			organ.name = "decayed [organ.name]"
+			organ.add_atom_colour(COLOR_SERVICE_LIME, FIXED_COLOUR_PRIORITY) // Green hue
 		loaded_count++
 
 	if(loaded_count > 0)
 		log_game("Loaded [loaded_count] persistent trash items for map '[map_name]'")
 
+#undef PERSISTENCE_BASE_DIRECTORY
 #undef CLEANABLES_DIRECTORY
+#undef TRASH_DIRECTORY
 #undef MAX_PERSISTENT_CLEANABLES
 #undef MAX_CLEANABLES_PER_TILE
 #undef MAX_PERSISTENT_TRASH
 #undef MAX_TRASH_PER_TILE
-
+#undef MAX_LIMBS_ORGANS_PER_TILE
