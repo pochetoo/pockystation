@@ -8,6 +8,8 @@
 	bite_consumption = 3
 	post_init_icon_state = "protein_bar"
 	foodtypes = GRAIN
+	greyscale_config = /datum/greyscale_config/protein_bar
+	flags_1 = NO_NEW_GAGS_PREVIEW_1
 
 /obj/item/food/protein_bar/one
 	name = "protein bar"
