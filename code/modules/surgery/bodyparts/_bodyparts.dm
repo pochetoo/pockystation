@@ -1611,24 +1611,6 @@
 	if(!rounds_persisted)
 		return
 
-	if(!ishuman(user))
-		return
-
-	var/mob/living/carbon/human/human_user = user
-	var/datum/job/user_job = human_user.mind?.assigned_role
-	if(!user_job)
-		return
-
-	// Check if user is in medical department
-	var/is_medical = FALSE
-	for(var/department in user_job.departments_list)
-		if(ispath(department, /datum/job_department/medical))
-			is_medical = TRUE
-			break
-
-	if(!is_medical)
-		return
-
 	var/time_text
 	if(rounds_persisted <= 1)
 		time_text = "a shift or two"
@@ -1645,8 +1627,23 @@
 	else
 		time_text = "more than a hundred shifts"
 
-	. += span_notice("Your experience in medicine tells you that this has been here for [time_text].")
-	. += span_notice("This limb is severely decayed and should be disposed of properly - try throwing it in maintenance or using the disposals system.")
+	// Show to medical personnel and ghosts
+	if(isobserver(user))
+		. += span_notice("This has been here for [time_text].")
+	else if(ishuman(user))
+		var/mob/living/carbon/human/human_user = user
+		var/datum/job/user_job = human_user.mind?.assigned_role
+		if(user_job)
+			// Check if user is in medical department
+			var/is_medical = FALSE
+			for(var/department in user_job.departments_list)
+				if(ispath(department, /datum/job_department/medical))
+					is_medical = TRUE
+					break
+
+			if(is_medical)
+				. += span_notice("Your experience in medicine tells you that this has been here for [time_text].")
+				. += span_notice("This limb is severely decayed and should be disposed of properly - try throwing it in maintenance or using the disposals system.")
 //VENUS ADDITION END - Persistent limbs/organs medical examine
 
 /// Remove a trait from the bodypart traits list, then removes the trait if necessary

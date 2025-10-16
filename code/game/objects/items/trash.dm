@@ -256,13 +256,6 @@
 	if(!rounds_persisted)
 		return
 
-	if(!ishuman(user))
-		return
-
-	var/mob/living/carbon/human/human_user = user
-	if(!istype(human_user.mind?.assigned_role, /datum/job/janitor))
-		return
-
 	var/time_text
 	if(rounds_persisted <= 1)
 		time_text = "a shift or two"
@@ -279,6 +272,12 @@
 	else
 		time_text = "more than a hundred shifts"
 
-	. += span_notice("Your experience in janitoring tells you that this has been here for [time_text].")
-	. += span_notice("You should probably dispose of this properly - you could try abandoning it in maintenance or using the disposals system.")
+	// Show to janitors and ghosts
+	if(isobserver(user))
+		. += span_notice("This has been here for [time_text].")
+	else if(ishuman(user))
+		var/mob/living/carbon/human/human_user = user
+		if(istype(human_user.mind?.assigned_role, /datum/job/janitor))
+			. += span_notice("Your experience in janitoring tells you that this has been here for [time_text].")
+			. += span_notice("You should probably dispose of this properly - you could try abandoning it in maintenance or using the disposals system.")
 //VENUS ADDITION END - Persistent trash janitor examine
