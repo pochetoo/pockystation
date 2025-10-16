@@ -187,5 +187,5 @@
 			. += span_notice("Your experience in janitoring tells you that this has been here for [time_text].")
 			return
 
-	. += span_notice("It looks like it has been here for [general_text], but a Janitor could know exactly how long.")
+	. += span_notice("It looks like it has been here for [general_text]... A janitor might be able to tell more.")
 //VENUS ADDITION END - Persistent cleanables janitor examine

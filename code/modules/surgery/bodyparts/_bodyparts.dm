@@ -1653,7 +1653,7 @@
 				. += span_notice("This limb is severely decayed and should be disposed of properly - try throwing it in maintenance or using the disposals system.")
 				return
 
-	. += span_notice("It looks like it has been here for [general_text], but a Medic could know exactly how long.")
+	. += span_notice("It looks like it has been here for [general_text]... A medical professional might be able to tell more.")
 //VENUS ADDITION END - Persistent limbs/organs medical examine
 
 /// Remove a trait from the bodypart traits list, then removes the trait if necessary
