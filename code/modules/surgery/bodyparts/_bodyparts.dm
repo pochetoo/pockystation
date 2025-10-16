@@ -1627,10 +1627,17 @@
 	else
 		time_text = "more than a hundred shifts"
 
-	// Show to medical personnel and ghosts
-	if(isobserver(user))
-		. += span_notice("This has been here for [time_text].")
-	else if(ishuman(user))
+	// General message for everyone
+	var/general_text
+	if(rounds_persisted <= 5)
+		general_text = "multiple shifts"
+	else if(rounds_persisted <= 20)
+		general_text = "many shifts"
+	else
+		general_text = "many, many shifts"
+
+	// Show specific details for medical personnel, generic text for everyone else
+	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
 		var/datum/job/user_job = human_user.mind?.assigned_role
 		if(user_job)
@@ -1644,6 +1651,9 @@
 			if(is_medical)
 				. += span_notice("Your experience in medicine tells you that this has been here for [time_text].")
 				. += span_notice("This limb is severely decayed and should be disposed of properly - try throwing it in maintenance or using the disposals system.")
+				return
+
+	. += span_notice("It looks like it has been here for [general_text], but a Medic could know exactly how long.")
 //VENUS ADDITION END - Persistent limbs/organs medical examine
 
 /// Remove a trait from the bodypart traits list, then removes the trait if necessary

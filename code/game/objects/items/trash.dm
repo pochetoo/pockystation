@@ -272,12 +272,22 @@
 	else
 		time_text = "more than a hundred shifts"
 
-	// Show to janitors and ghosts
-	if(isobserver(user))
-		. += span_notice("This has been here for [time_text].")
-	else if(ishuman(user))
+	// General message for everyone
+	var/general_text
+	if(rounds_persisted <= 5)
+		general_text = "multiple shifts"
+	else if(rounds_persisted <= 20)
+		general_text = "many shifts"
+	else
+		general_text = "many, many shifts"
+
+	// Show specific details for janitors, generic text for everyone else
+	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
 		if(istype(human_user.mind?.assigned_role, /datum/job/janitor))
 			. += span_notice("Your experience in janitoring tells you that this has been here for [time_text].")
 			. += span_notice("You should probably dispose of this properly - you could try abandoning it in maintenance or using the disposals system.")
+			return
+
+	. += span_notice("It looks like it has been here for [general_text], but a Janitor could know exactly how long.")
 //VENUS ADDITION END - Persistent trash janitor examine
