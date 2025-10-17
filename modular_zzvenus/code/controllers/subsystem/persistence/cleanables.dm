@@ -239,10 +239,7 @@ GLOBAL_LIST_INIT(non_persistent_cleanables, list(
 			// Mark forensic DNA as too old to identify instead of wiping it completely
 			if(blood_decal.forensics && blood_decal.forensics.blood_DNA)
 				// Replace DNA with a "too old" marker that scanners can detect
-				var/list/old_dna = blood_decal.forensics.blood_DNA.Copy()
-				blood_decal.forensics.blood_DNA = list()
-				for(var/dna_key in old_dna)
-					blood_decal.forensics.blood_DNA["Too old to identify"] = old_dna[dna_key]
+				blood_decal.forensics.blood_DNA = list("Too old to identify" = "Unknown")
 			// Reapply the saved dried color to override any DNA-based color from Initialize
 			blood_decal.color = cleanable_data["color"]
 			// Update appearance to apply dried names/descriptions and overlays
