@@ -534,14 +534,18 @@ GLOBAL_LIST_INIT(non_persistent_cleanables, list(
 			limb.brute_dam = limb.max_damage
 			limb.burn_dam = limb.max_damage
 			limb.update_disabled()
-			limb.name = "decayed [limb.name]"
+			// Only add "decayed" prefix if it's not already there
+			if(findtext(limb.name, "decayed") != 1)
+				limb.name = "decayed [limb.name]"
 			limb.add_atom_colour(COLOR_SERVICE_LIME, FIXED_COLOUR_PRIORITY) // Green hue
 		else if(istype(new_item, /obj/item/organ))
 			var/obj/item/organ/organ = new_item
 			organ.set_organ_damage(organ.maxHealth)
 			organ.organ_flags |= ORGAN_FAILING
 			organ.useable = FALSE
-			organ.name = "decayed [organ.name]"
+			// Only add "decayed" prefix if it's not already there
+			if(findtext(organ.name, "decayed") != 1)
+				organ.name = "decayed [organ.name]"
 			organ.add_atom_colour(COLOR_SERVICE_LIME, FIXED_COLOUR_PRIORITY) // Green hue
 		loaded_count++
 
