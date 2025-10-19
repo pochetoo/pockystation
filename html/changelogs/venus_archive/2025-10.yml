@@ -10,3 +10,4 @@
 2025-10-19:
   Goku:
   - rscadd: Added examine text to research scrap, showing what materials are required to complete it.
+  - rscdel: Disabled cleanbot's ability to clean graffiti.
