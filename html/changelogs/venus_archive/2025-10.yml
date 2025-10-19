@@ -7,3 +7,6 @@
 2025-10-12:
   Goku:
   - rscadd: Persistent cleanables and trash system! Blood, graffiti, and trash now persist across rounds. Janitors can examine items to see how long they've been there and get disposal hints.
+2025-10-19:
+  Goku:
+  - rscadd: Added examine text to research scrap, showing what materials are required to complete it.
