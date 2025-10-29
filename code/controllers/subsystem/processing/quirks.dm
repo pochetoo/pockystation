@@ -100,6 +100,10 @@ GLOBAL_LIST_INIT_TYPED(quirk_blacklist, /list/datum/quirk, list(
 	list(/datum/quirk/item_quirk/addict/smoker, /datum/quirk/item_quirk/bloodfledge),
 	list(/datum/quirk/item_quirk/addict/smoker, /datum/quirk/concubus),
 	//SPLURT EDIT ADDITION END
+	//VENUS ADDITION START - Start of Void-Touched quirk blacklist
+	// Incompatible: both confer TRAIT_MUTE
+	list(/datum/quirk/void_touched, /datum/quirk/mute),
+	//VENUS ADDITION END - End of Void-Touched quirk blacklist
 ))
 
 GLOBAL_LIST_INIT(quirk_string_blacklist, generate_quirk_string_blacklist())
