@@ -1,0 +1,4 @@
+author: "Mindstormsman"
+delete-after: True
+changes:
+  - bugfix: "Clown oral now sends the correct clown related message and Honk sound"
